@@ -1,0 +1,36 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Node / Nuxt
+node_modules/
+.nuxt/
+.output/
+.nitro/
+.cache/
+dist/
+coverage/
+
+# .NET
+bin/
+obj/
+*.user
+TestResults/
+*.db
+
+# Playwright
+playwright-report/
+test-results/
+
+# Docker volumes (local)
+deploy/data/
