@@ -1,0 +1,1 @@
+Multi-branch supermarket purchasing & inventory system — PR → PO → goods receipt → lot-based stock with expiry alerts. Built with Nuxt 4, ASP.NET Core, PostgreSQL & MongoDB, deployed on Google Compute Engine with Docker, Nginx
