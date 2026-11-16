@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><title>StockFlow</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "page-bg": "#F0EEE9", "card-bg": "#FAF9F6", "card-border": "#E2DFD8", "lilac-track": "#E8DFFA", "lilac-border": "#D0BDF4", "lilac-primary": "#7A4FB0", "lilac-deep": "#5A3590", "slate-bar": "#494D5F", "nav-inactive": "#6B6F80", "sky-accent": "#A0D2EB", "status-neutral-bg": "#ECEDF2", "status-neutral-text": "#5D6285", "status-danger-bg": "#FFE3E5", "status-danger-text": "#C2303A", "status-warning-bg": "#FFF0CC", "status-warning-text": "#8A5A00", "status-success-bg": "#DDF3E8", "status-success-text": "#11734A" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "1.5rem", "gutter": "1rem", "gutter-mobile": "0.75rem", "space-lg": "1.25rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "margin": "1rem" }, fontFamily: { "title-md": ["IBM Plex Sans", "sans-serif"], "body-lg": ["IBM Plex Sans", "sans-serif"], "code-sm": ["JetBrains Mono", "monospace"], "label-eyebrow": ["Plus Jakarta Sans", "sans-serif"], "headline-lg": ["Plus Jakarta Sans", "sans-serif"], "body-sm": ["IBM Plex Sans", "sans-serif"], "display-sm": ["Plus Jakarta Sans", "sans-serif"], "headline-sm": ["Plus Jakarta Sans", "sans-serif"], "display-lg": ["Plus Jakarta Sans", "sans-serif"], "code-md": ["JetBrains Mono", "monospace"], "body-md": ["IBM Plex Sans", "sans-serif"] }, fontSize: { "title-md": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }], "label-eyebrow": ["12px", { lineHeight: "16px", letterSpacing: "0.12em", fontWeight: "700" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "500" }], "display-sm": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "800" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "500" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#F0EEE9;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-[#F0EEE9] text-[#2E3140] font-body-md text-body-md min-h-screen flex justify-center"><div class="w-full max-w-[390px] min-h-screen relative flex flex-col bg-[#F0EEE9]"><header class="fixed top-0 w-full max-w-[390px] z-50 bg-[#494D5F] text-white pt-safe shadow-sm"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-2.5 min-w-0 flex-1"><div class="w-8 h-8 bg-[#7A4FB0] flex items-center justify-center text-white shrink-0 shadow-sm rounded-lg"><svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5c0 3.5 2.5 6.5 6 6.5 1.5 0 3-.5 4-1.5-1-1.5-1.5-3.5-1-5 1.5-4.5 6-5.5 6-5.5z"></path></svg></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5 min-w-0"><span class="font-headline-sm text-headline-sm text-white font-bold tracking-tight truncate leading-tight">StockFlow</span><span class="text-white/60 text-[13px]">·</span><span class="font-body-md text-[14px] text-white/90 truncate leading-tight">ขอซื้อ</span></div><span class="font-body-sm text-[11px] text-white/75 truncate tracking-normal">สาขา 2 (สุขุมวิท 71)</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Notifications" class="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl text-white/85 hover:text-white hover:bg-white/10 transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#A0D2EB] ring-2 ring-[#494D5F]"></span></button><div class="w-8 h-8 rounded-full bg-[#7A4FB0] flex items-center justify-center shrink-0 ml-1 rounded-lg"><span class="material-symbols-outlined text-white text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full px-margin-mobile pt-20 pb-28 bg-[#F0EEE9] flex flex-col"><div class="flex flex-col w-full pb-6">
+<!-- Document Meta Header Card -->
+<div class="flex flex-col gap-space-xs mb-space-md bg-[#FAF9F6] border border-[#E2DFD8] rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<a class="w-8 h-8 rounded-lg bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] hover:bg-[#D0BDF4] transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</a>
+<h2 class="font-headline-sm text-headline-sm text-[#2E3140] truncate">สร้างใบขอซื้อ</h2>
+</div>
+<!-- Neutral pill badge "ร่าง" -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#ECEDF2] text-[#5D6285] text-[11px] font-body-sm shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5D6285]"></span>
+<span>ร่าง</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 pt-1 pl-1 text-[#6B6F80] font-code-sm text-code-sm truncate">
+<span class="text-[#7A4FB0] font-semibold">PR-2026-0231</span>
+<span>·</span>
+<span class="truncate">สาขา 2 · รอบสั่งวันจันทร์</span>
+</div>
+</div>
+<!-- 1. SMART ALERT BANNER (Deep Slate #494D5F Card) -->
+<section class="relative overflow-hidden rounded-[20px] bg-[#494D5F] p-4 text-white shadow-md mb-space-md">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center shrink-0 text-[#A0D2EB]">
+<span class="material-symbols-outlined text-[22px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md text-white leading-tight">
+          มีสินค้า <span class="text-[#A0D2EB] font-bold">4</span> รายการ ต่ำกว่าจุดสั่งซื้อ (Reorder Point)
+        </h3>
+<p class="font-body-sm text-body-sm text-white/85 mt-1.5 leading-relaxed">
+          ระบบคำนวณจำนวนให้ถึงสต็อกสูงสุดอัตโนมัติ คุณสามารถตรวจสอบและปรับแก้ก่อนกดยืนยันส่งใบขอซื้อ
+        </p>
+<div class="mt-3.5 flex items-center justify-between gap-2">
+<a class="inline-flex items-center justify-center gap-1.5 px-4 h-9 rounded-full bg-[#FAF9F6] text-[#7A4FB0] font-title-md text-[13px] hover:bg-white transition-colors shadow-sm font-semibold" href="#">
+<span class="material-symbols-outlined text-[16px]">playlist_add_check</span>
+<span>เพิ่มทั้งหมด</span>
+</a>
+<span class="font-code-sm text-code-sm text-white/70">ประหยัดเวลา ~3 นาที</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Search & Scan Row -->
+<div class="flex items-center gap-2 mb-space-md">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-[#6B6F80] text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-4 rounded-xl bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] placeholder:text-[#6B6F80] font-body-md text-body-md shadow-sm focus:outline-none focus:border-[#7A4FB0] transition-colors" placeholder="ค้นหาสินค้า หรือสแกนบาร์โค้ด" type="search">
+</div>
+<button aria-label="Scan barcode" class="w-12 h-12 rounded-xl bg-[#FAF9F6] border border-[#E2DFD8] flex items-center justify-center text-[#7A4FB0] hover:bg-[#E8DFFA] transition-colors shadow-sm shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</button>
+</div>
+<!-- 3. ITEM ENTRY CARD -->
+<section class="bg-[#FAF9F6] border border-[#E2DFD8] rounded-[20px] p-4 shadow-sm mb-space-md flex flex-col gap-3.5">
+<!-- Header row -->
+<div class="flex items-start gap-3">
+<!-- Beverage Category Tile -->
+<div class="w-[42px] h-[42px] rounded-xl bg-[#E8DFFA] text-[#5A3590] flex items-center justify-center shrink-0 shadow-sm border border-[#D0BDF4]">
+<span class="material-symbols-outlined text-[24px]">water_bottle</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md text-[#2E3140] truncate">น้ำดื่ม 600 มล.</h4>
+<span class="text-[11px] font-title-md bg-[#FFE3E5] text-[#C2303A] px-2 py-0.5 rounded-full shrink-0">ROP Alert</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5 text-[#6B6F80] font-code-sm text-code-sm truncate">
+<span class="font-semibold text-[#5A3590]">SKU-885012</span>
+<span>·</span>
+<span>คงเหลือ 30 ขวด</span>
+<span>·</span>
+<span class="text-[#C2303A]">จุดสั่งซื้อ 48 ขวด</span>
+</div>
+</div>
+</div>
+<!-- Segmented Control for Units -->
+<div class="flex flex-col mt-1">
+<span class="font-label-eyebrow text-label-eyebrow text-[#6B6F80] uppercase tracking-wider mb-2">หน่วยสั่งซื้อ (ORDER UNIT)</span>
+<div class="grid grid-cols-3 p-1 rounded-xl bg-[#E8DFFA] gap-1" id="unit-selector">
+<button class="unit-opt h-9 rounded-lg font-body-sm text-body-sm text-[#5A3590] hover:text-[#2E3140] transition-all" type="button">
+          ขวด
+        </button>
+<button class="unit-opt h-9 rounded-lg font-body-sm text-body-sm text-[#5A3590] hover:text-[#2E3140] transition-all" type="button">
+          แพ็ค (12)
+        </button>
+<button class="unit-opt active-unit h-9 rounded-lg font-title-md text-title-md text-[#7A4FB0] bg-[#FAF9F6] border border-[#D0BDF4] shadow-sm transition-all" type="button">
+          ลัง (48)
+        </button>
+</div>
+</div>
+<!-- Stepper & Quantity Row -->
+<div class="flex items-center justify-between pt-1">
+<div>
+<span class="font-title-md text-body-md text-[#2E3140] block leading-tight">จำนวนสั่ง (ลัง)</span>
+<span class="font-body-sm text-[11px] text-[#6B6F80] block mt-0.5">ขั้นต่ำรอบละ 1 หน่วย</span>
+</div>
+<!-- Recessed Tray Stepper Counter -->
+<div class="flex items-center gap-1.5 p-1 rounded-xl bg-[#E8DFFA] border border-[#D0BDF4]">
+<button aria-label="Decrease quantity" class="w-10 h-10 rounded-lg bg-[#FAF9F6] border border-[#D0BDF4] flex items-center justify-center text-[#5A3590] active:scale-95 transition-transform shadow-xs" id="btn-decrement" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="w-10 text-center font-code-md text-headline-sm text-[#2E3140] select-none" id="qty-display">
+          2
+        </span>
+<button aria-label="Increase quantity" class="w-10 h-10 rounded-lg bg-[#FAF9F6] border border-[#D0BDF4] flex items-center justify-center text-[#5A3590] active:scale-95 transition-transform shadow-xs" id="btn-increment" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+<!-- LIVE CONVERSION PILL -->
+<div class="rounded-xl p-2.5 bg-[#E8DFFA] border border-[#D0BDF4] flex items-center justify-between shadow-xs text-[#5A3590]">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[#7A4FB0] text-[18px]">sync_alt</span>
+<span class="font-code-md text-code-md text-[#5A3590] font-bold truncate">
+          = <span class="text-[#7A4FB0]" id="converted-display">96</span> ขวด (หน่วยฐานในสต็อก)
+        </span>
+</div>
+<span class="font-code-sm text-[10px] text-[#5A3590] bg-[#FAF9F6] border border-[#D0BDF4] px-2 py-0.5 rounded-md shadow-xs shrink-0 font-medium">
+        เข้าคลังหลัก
+      </span>
+</div>
+<!-- Prototype Trigger Link -->
+<div class="flex justify-end pt-0.5">
+<a class="font-code-sm text-[11px] text-[#6B6F80] hover:text-[#7A4FB0] underline decoration-dotted transition-colors" href="#">
+        ดูตัวอย่าง error (2B)
+      </a>
+</div>
+</section>
+<!-- 4. Quick Recommendations Teaser -->
+<section class="flex flex-col gap-2 mb-space-md">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h4 class="font-title-md text-title-md text-[#2E3140]">รายการแนะนำด่วน</h4>
+<span class="font-code-sm text-[10px] uppercase font-bold px-1.5 py-0.5 rounded bg-[#FFF0CC] text-[#8A5A00]">ROP</span>
+</div>
+<a class="font-body-sm text-[12px] text-[#7A4FB0] hover:underline" href="#">ดูทั้งหมด (4)</a>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Mini Card 1 -->
+<div class="bg-[#FAF9F6] border border-[#E2DFD8] p-3 rounded-2xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-[#F0EEE9] transition-colors">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-[#E8DFFA] text-[#5A3590] flex items-center justify-center shrink-0 border border-[#D0BDF4]">
+<span class="material-symbols-outlined text-[18px]">ramen_dining</span>
+</div>
+<button aria-label="Quick add" class="w-7 h-7 rounded-full bg-[#E8DFFA] border border-[#D0BDF4] flex items-center justify-center text-[#5A3590] hover:bg-[#7A4FB0] hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="mt-2.5">
+<p class="font-title-md text-body-sm text-[#2E3140] truncate">บะหมี่กึ่งสำเร็จรูป</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C2303A]"></span>
+<span class="font-code-sm text-[11px] text-[#C2303A]">ขาด 12 ซอง</span>
+</div>
+</div>
+</div>
+<!-- Mini Card 2 -->
+<div class="bg-[#FAF9F6] border border-[#E2DFD8] p-3 rounded-2xl flex flex-col justify-between shadow-sm relative overflow-hidden group hover:bg-[#F0EEE9] transition-colors">
+<div class="flex items-start justify-between">
+<div class="w-8 h-8 rounded-lg bg-[#E8DFFA] text-[#5A3590] flex items-center justify-center shrink-0 border border-[#D0BDF4]">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>
+</div>
+<button aria-label="Quick add" class="w-7 h-7 rounded-full bg-[#E8DFFA] border border-[#D0BDF4] flex items-center justify-center text-[#5A3590] hover:bg-[#7A4FB0] hover:text-white transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<div class="mt-2.5">
+<p class="font-title-md text-body-sm text-[#2E3140] truncate">นมจืด 1,000 มล.</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A5A00]"></span>
+<span class="font-code-sm text-[11px] text-[#8A5A00]">เหลือ 5 กล่อง</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Bottom Summary & Sticky Action Bar Area -->
+<section class="bg-[#FAF9F6] border border-[#E2DFD8] rounded-[20px] p-4 shadow-md flex flex-col gap-3.5 mt-auto">
+<div class="flex items-center justify-between text-[#2E3140]">
+<div class="flex items-center gap-1.5 text-[#6B6F80] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-[#7A4FB0]">check_circle</span>
+<span>1 รายการที่เลือก</span>
+</div>
+<div class="text-right">
+<span class="font-body-sm text-[11px] text-[#6B6F80] block leading-none">สรุปการแปลงหน่วย</span>
+<span class="font-code-md text-title-md text-[#2E3140] font-bold">
+          รวมยอดส่งเบิก: <span class="text-[#7A4FB0] font-black" id="summary-total">96</span> ขวด
+        </span>
+</div>
+</div>
+<!-- Submit PR Button -->
+<a class="w-full h-[52px] rounded-xl bg-[#7A4FB0] text-white font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-[#613696] active:scale-[0.99] transition-all shadow-md font-semibold" href="#">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>ส่งใบขอซื้อ (PR)</span>
+</a>
+</section>
+</div>
+<script>
+  (function initInteractivePR() {
+    let qty = 2;
+    let multiplier = 48; // default: ลัง (48)
+
+    const qtyDisplay = document.getElementById('qty-display');
+    const convertedDisplay = document.getElementById('converted-display');
+    const summaryTotal = document.getElementById('summary-total');
+    const btnIncrement = document.getElementById('btn-increment');
+    const btnDecrement = document.getElementById('btn-decrement');
+    const unitButtons = document.querySelectorAll('.unit-opt');
+
+    function updateCalculations() {
+      if (qtyDisplay) qtyDisplay.textContent = qty;
+      const totalUnits = qty * multiplier;
+      if (convertedDisplay) convertedDisplay.textContent = totalUnits;
+      if (summaryTotal) summaryTotal.textContent = totalUnits;
+    }
+
+    if (btnIncrement) {
+      btnIncrement.addEventListener('click', () => {
+        qty++;
+        updateCalculations();
+      });
+    }
+
+    if (btnDecrement) {
+      btnDecrement.addEventListener('click', () => {
+        if (qty > 1) {
+          qty--;
+          updateCalculations();
+        }
+      });
+    }
+
+    unitButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        unitButtons.forEach(b => {
+          b.className = 'unit-opt h-9 rounded-lg font-body-sm text-body-sm text-[#5A3590] hover:text-[#2E3140] transition-all';
+        });
+        btn.className = 'unit-opt active-unit h-9 rounded-lg font-title-md text-title-md text-[#7A4FB0] bg-[#FAF9F6] border border-[#D0BDF4] shadow-sm transition-all';
+        
+        if (index === 0) multiplier = 1;
+        else if (index === 1) multiplier = 12;
+        else multiplier = 48;
+
+        updateCalculations();
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full max-w-[390px] z-50 pb-safe bg-[#FAF9F6]/95 backdrop-blur-xl border-t border-[#E2DFD8] shadow-[0_-2px_12px_rgba(73,77,95,0.06)]" data-active-classes="text-[#7A4FB0] font-semibold"><div class="grid grid-cols-4 h-16 items-center px-space-xs"><a class="flex flex-col items-center justify-center h-full min-h-[44px] py-1 text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="หน้าแรก" href="#"><svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 22V12h6v10"></path><path d="m2 10 2.5-3.5L7 9"></path><path d="M4 10h16"></path></svg><span class="font-body-sm text-[11px] leading-tight mt-1">หน้าแรก</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] py-1 text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="รับของ" href="#"><svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg><span class="font-body-sm text-[11px] leading-tight mt-1">รับของ</span></a><a aria-current="page" class="flex flex-col items-center justify-center h-full min-h-[44px] py-1 transition-colors text-[#7A4FB0] font-semibold" data-path="ขอซื้อ" href="#"><div class="px-3 py-0.5 rounded-full bg-[#E8DFFA] flex flex-col items-center"><svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg></div><span class="font-body-sm text-[11px] leading-tight mt-0.5 text-[#7A4FB0]">ขอซื้อ</span></a><a class="flex flex-col items-center justify-center h-full min-h-[44px] py-1 text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="สต็อก" href="#"><svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewBox="0 0 24 24"><rect height="5" rx="1" width="20" x="2" y="3"></rect><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"></path><path d="M10 12h4"></path></svg><span class="font-body-sm text-[11px] leading-tight mt-1">สต็อก</span></a></div></nav></div>
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary": "#ffffff", "tertiary-fixed-dim": "#9ccee6", "primary-fixed": "#eedbff", "surface-container": "#FAF9F6", "error": "#C2303A", "on-surface": "#2E3140", "on-background": "#2E3140", "primary-fixed-dim": "#d9b9ff", "on-error": "#ffffff", "on-tertiary": "#ffffff", "outline-variant": "#E2DFD8", "surface-variant": "#E2DFD8", "inverse-surface": "#494D5F", "primary-container": "#7A4FB0", "primary": "#7A4FB0", "surface-bright": "#FAF9F6", "surface-dim": "#d7d9ed", "on-primary": "#ffffff", "surface-tint": "#7349a9", "surface-container-low": "#FAF9F6", "tertiary": "#1c5368", "surface-container-lowest": "#FAF9F6", "outline": "#6B6F80", "surface-container-highest": "#E2DFD8", "on-primary-container": "#FAF9F6", "background": "#F0EEE9", "inverse-primary": "#d9b9ff", "on-surface-variant": "#6B6F80", "surface-container-high": "#E2DFD8", "error-container": "#FFE3E5", "surface": "#FAF9F6", "secondary": "#5A3590", "secondary-container": "#E8DFFA", "on-error-container": "#C2303A", "inverse-on-surface": "#FAF9F6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.25rem", "gutter": "1rem", "space-xs": "0.25rem", "margin": "1rem", "margin-mobile": "1rem", "space-xl": "1.5rem", "gutter-mobile": "0.75rem", "space-md": "1rem" }, fontFamily: { "body-lg": ["IBM Plex Sans"], "code-md": ["JetBrains Mono"], "title-md": ["IBM Plex Sans"], "body-md": ["IBM Plex Sans"], "headline-sm": ["Plus Jakarta Sans"], "label-eyebrow": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "display-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["IBM Plex Sans"], "code-sm": ["JetBrains Mono"] }, fontSize: { "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "code-md": ["13px", { lineHeight: "18px", fontWeight: "500" }], "title-md": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-sm": ["18px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }], "label-eyebrow": ["12px", { lineHeight: "16px", letterSpacing: "0.12em", fontWeight: "700" }], "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.03em", fontWeight: "800" }], "display-sm": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "500" }], "code-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-[#F0EEE9] font-body-md text-[#2E3140] flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-[#494D5F] text-white shadow-[0_1px_8px_rgba(46,49,64,0.08)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex flex-col justify-center min-w-0 pr-space-sm"><div class="flex items-center gap-2.5 min-w-0"><div class="w-8 h-8 rounded-lg bg-[#7A4FB0] flex items-center justify-center text-white shadow-sm shrink-0"><svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5c0 3.5 2.5 6.5 6 6.5 1.5 0 3-.5 4-1.5-1-1.5-1.5-3.5-1-5 1.5-4.5 6-5.5 6-5.5z"></path></svg></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-[16px] font-bold text-white tracking-tight leading-tight">StockFlow</span><span class="font-code-sm text-[10px] px-1.5 py-0.2 bg-[#A0D2EB]/20 text-[#A0D2EB] rounded font-semibold">OS</span></div><span class="font-body-sm text-[11px] text-white/70 truncate">สาขา 2 (สุขุมวิท 71)</span></div></div></div><div class="flex items-center gap-space-sm shrink-0"><button class="w-11 h-11 flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-[#E8DFFA] flex items-center justify-center"><span class="material-symbols-outlined text-[#5A3590] text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-[#F0EEE9] min-h-screen"><div class="flex flex-col w-full px-gutter pb-8 gap-space-lg">
+<!-- Top Greeting Area -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex flex-col min-w-0">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-[#6B6F80] flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#7A4FB0]"></span>
+        พฤหัสบดี 12 พ.ย. · สาขา 2
+      </span>
+<h2 class="font-display-sm text-display-sm text-[#2E3140] tracking-tight mt-0.5 font-bold">
+        สวัสดีตอนเช้า คุณต้น
+      </h2>
+</div>
+<div class="relative shrink-0">
+<button aria-label="การแจ้งเตือน" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#FAF9F6] border border-[#E2DFD8] shadow-sm text-[#2E3140] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<span class="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#C2303A] text-white font-headline-sm text-[11px] font-bold flex items-center justify-center shadow-sm">
+        3
+      </span>
+</div>
+</div>
+<!-- Today Highlight Card (Lilac Dusk Deep Slate) -->
+<section class="relative overflow-hidden rounded-[20px] bg-[#494D5F] text-[#FAF9F6] p-5 shadow-xl border border-[#494D5F]">
+<!-- Decorative background glow -->
+<div class="absolute -right-10 -top-10 w-44 h-44 rounded-full bg-[#7A4FB0]/25 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-36 h-36 rounded-full bg-[#A0D2EB]/20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-eyebrow text-label-eyebrow text-[#A0D2EB] tracking-widest px-2 py-0.5 rounded-full bg-[#A0D2EB]/15 border border-[#A0D2EB]/30">
+            TODAY
+          </span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#A0D2EB] animate-pulse"></span>
+</div>
+<span class="font-code-sm text-code-sm text-white/70">รอบเช้า 08:00 - 12:00</span>
+</div>
+<div>
+<h3 class="font-headline-lg text-headline-lg text-white font-bold">
+          วันนี้มี 2 PO มาส่ง
+        </h3>
+<p class="font-body-sm text-body-sm text-white/80 mt-0.5">
+          กรุณาตรวจนับและคัดกรองวันหมดอายุที่แท่นรับสินค้า
+        </p>
+</div>
+<!-- Compact Rows -->
+<div class="flex flex-col gap-2 rounded-xl bg-black/20 p-2.5 backdrop-blur-sm border border-white/10">
+<!-- Row 1 -->
+<a class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 hover:bg-white/10 active:bg-white/15 transition-all" data-path="receive-goods" href="#">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md text-[#A0D2EB]">PO-2026-0842</span>
+<span class="w-1 h-1 rounded-full bg-white/40"></span>
+<span class="font-body-sm text-body-sm text-white font-medium truncate">บจก. สยามฟาร์มเฟรช</span>
+</div>
+<span class="font-body-sm text-[12px] text-white/70 mt-0.5">สินค้าสด &amp; นมสดพร้อมดื่ม (14 ลัง)</span>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="font-code-sm text-code-sm text-[#A0D2EB] font-semibold px-2 py-0.5 rounded-md bg-[#A0D2EB]/15">09:40 น.</span>
+<span class="material-symbols-outlined text-white/60 text-[20px]">chevron_right</span>
+</div>
+</a>
+<!-- Row 2 -->
+<a class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 hover:bg-white/10 active:bg-white/15 transition-all" data-path="receive-goods" href="#">
+<div class="flex flex-col min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md text-[#A0D2EB]">PO-2026-0815</span>
+<span class="w-1 h-1 rounded-full bg-white/40"></span>
+<span class="font-body-sm text-body-sm text-white font-medium truncate">บจก. ธารทิพย์ เบฟเวอเรจ</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/10 text-[11px] font-body-sm text-white/90">
+<span class="w-1.5 h-1.5 rounded-full bg-[#E8DFFA]"></span>
+                ค้างส่ง 7 แพ็ค
+              </span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-white/60 text-[20px]">chevron_right</span>
+</div>
+</a>
+</div>
+<!-- Action Button -->
+<a class="w-full h-[52px] flex items-center justify-center gap-2 rounded-xl bg-[#7A4FB0] text-white font-headline-sm text-headline-sm font-bold shadow-md active:scale-[0.98] transition-all hover:bg-[#5A3590]" data-path="receive-goods" href="#">
+<span>เริ่มรับของ</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Bento Grid Task Tiles -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-eyebrow text-label-eyebrow text-[#6B6F80] uppercase tracking-wider">
+        ภาพรวมงานด่วน (Operational Alerts)
+      </span>
+<span class="font-code-sm text-code-sm text-[#6B6F80]">4 รายการ</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- 1. Focal Key Tile in Sky Accent: Dairy/Restock -->
+<a class="flex flex-col justify-between p-4 rounded-[20px] bg-[#A0D2EB] text-[#2E3140] min-h-[148px] shadow-sm active:scale-[0.98] transition-transform border border-[#8ec6df]" data-path="stock-inventory" href="#">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-body-sm font-semibold leading-tight text-[#2E3140]">ต่ำกว่าจุดสั่งซื้อ</span>
+<span class="material-symbols-outlined text-[20px] text-[#2E3140] opacity-80">inventory</span>
+</div>
+<div class="my-1">
+<div class="font-display-lg text-display-lg font-extrabold leading-none tracking-tight text-[#2E3140]">4</div>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-[12px] font-medium text-[#2E3140] opacity-90">
+<span>แตะเพื่อขอซื้อ</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</a>
+<!-- 2. Surface Tile: Expiry Watch -->
+<div class="flex flex-col justify-between p-4 rounded-[20px] bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] min-h-[148px] shadow-sm active:scale-[0.98] transition-transform cursor-pointer">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-body-sm font-semibold leading-tight text-[#2E3140]">ใกล้หมดอายุ</span>
+<span class="material-symbols-outlined text-[20px] text-[#7A4FB0]">event_upcoming</span>
+</div>
+<div class="my-1">
+<div class="font-display-lg text-display-lg font-extrabold leading-none tracking-tight text-[#7A4FB0]">3</div>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-[12px] font-medium text-[#6B6F80]">
+<span>ภายใน 3 วัน</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</div>
+</div>
+<!-- 3. Surface Tile: Pending PR -->
+<a class="flex flex-col justify-between p-4 rounded-[20px] bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] min-h-[148px] shadow-sm active:scale-[0.98] transition-transform" data-path="purchase-requests" href="#">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-body-sm font-semibold leading-tight text-[#2E3140]">PR รออนุมัติ</span>
+<span class="material-symbols-outlined text-[20px] text-[#7A4FB0]">hourglass_top</span>
+</div>
+<div class="my-1">
+<div class="font-display-lg text-display-lg font-extrabold leading-none tracking-tight text-[#2E3140]">1</div>
+</div>
+<div class="flex items-center gap-1 font-code-sm text-[11px] font-medium text-[#6B6F80] truncate">
+<span class="truncate">PR-2026-0231</span>
+<span class="material-symbols-outlined text-[14px] shrink-0">arrow_forward</span>
+</div>
+</a>
+<!-- 4. Surface Tile: Backlog -->
+<div class="flex flex-col justify-between p-4 rounded-[20px] bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] min-h-[148px] shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-body-sm font-semibold leading-tight text-[#2E3140]">ค้างส่งสะสม</span>
+<span class="material-symbols-outlined text-[20px] text-[#6B6F80]">pending_actions</span>
+</div>
+<div class="my-1">
+<div class="font-display-lg text-display-lg font-extrabold leading-none tracking-tight text-[#7A4FB0]">9</div>
+</div>
+<div class="flex items-center gap-1 font-body-sm text-[12px] font-medium text-[#6B6F80] truncate">
+<span class="truncate">ลัง/แพ็ค จาก 2 PO</span>
+<span class="material-symbols-outlined text-[14px] shrink-0">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Actions Row -->
+<section class="flex flex-col gap-space-sm">
+<span class="font-label-eyebrow text-label-eyebrow text-[#6B6F80] uppercase tracking-wider">
+      ทางลัดการทำงาน (Quick Actions)
+    </span>
+<div class="grid grid-cols-4 gap-2.5">
+<!-- 1: รับของ -->
+<a class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] shadow-sm active:scale-95 transition-transform min-h-[92px] group" data-path="receive-goods" href="#">
+<div class="w-10 h-10 rounded-xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] mb-1.5 transition-colors group-hover:bg-[#d9b9ff]">
+<span class="material-symbols-outlined text-[22px]">package_2</span>
+</div>
+<span class="font-title-md text-[12px] font-semibold text-center leading-tight text-[#2E3140]">รับของ</span>
+</a>
+<!-- 2: ขอซื้อ -->
+<a class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] shadow-sm active:scale-95 transition-transform min-h-[92px] group" data-path="purchase-requests" href="#">
+<div class="w-10 h-10 rounded-xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] mb-1.5 transition-colors group-hover:bg-[#d9b9ff]">
+<span class="material-symbols-outlined text-[22px]">add_shopping_cart</span>
+</div>
+<span class="font-title-md text-[12px] font-semibold text-center leading-tight text-[#2E3140]">สร้างใบขอซื้อ</span>
+</a>
+<!-- 3: เช็คสต็อก -->
+<a class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] shadow-sm active:scale-95 transition-transform min-h-[92px] group" data-path="stock-inventory" href="#">
+<div class="w-10 h-10 rounded-xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] mb-1.5 transition-colors group-hover:bg-[#d9b9ff]">
+<span class="material-symbols-outlined text-[22px]">shelves</span>
+</div>
+<span class="font-title-md text-[12px] font-semibold text-center leading-tight text-[#2E3140]">เช็คสต็อก</span>
+</a>
+<!-- 4: สแกนบาร์โค้ด -->
+<button class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140] shadow-sm active:scale-95 transition-transform min-h-[92px] group" id="quick-scan-trigger">
+<div class="w-10 h-10 rounded-xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] mb-1.5 transition-colors group-hover:bg-[#d9b9ff]">
+<span class="material-symbols-outlined text-[22px]">barcode_scanner</span>
+</div>
+<span class="font-title-md text-[12px] font-semibold text-center leading-tight text-[#2E3140]">สแกนโค้ด</span>
+</button>
+</div>
+</section>
+<!-- Recent Activities (กิจกรรมล่าสุด) -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-[#2E3140] font-bold">
+        กิจกรรมล่าสุด
+      </h3>
+<a class="font-title-md text-body-sm text-[#7A4FB0] hover:underline font-semibold flex items-center gap-0.5" href="#">
+<span>ดูทั้งหมด</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="flex flex-col rounded-[20px] bg-[#FAF9F6] border border-[#E2DFD8] shadow-sm divide-y-0 overflow-hidden">
+<!-- Item 1: Dairy partial receive (Warning badge) -->
+<div class="flex items-center justify-between p-4 bg-[#FAF9F6] hover:bg-[#F0EEE9] transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-11 h-11 rounded-2xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] shrink-0">
+<span class="material-symbols-outlined text-[22px]">receipt_long</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-body-sm text-[#2E3140] font-semibold truncate">
+                รับของ GRN-2026-0311
+              </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<!-- Pill badge warning: text #8A5A00 on #FFF0CC -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-[#FFF0CC] text-[11px] font-title-md text-[#8A5A00] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A5A00]"></span>
+                รับบางส่วน
+              </span>
+<span class="font-body-sm text-[12px] text-[#6B6F80] truncate">นมสดเมจิ 2 ลัง</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-code-sm text-code-sm text-[#6B6F80]">09:52</span>
+<span class="font-body-sm text-[11px] text-[#6B6F80]/80">เช้านี้</span>
+</div>
+</div>
+<!-- Separator line recessed -->
+<div class="h-[1px] w-full bg-[#E2DFD8]"></div>
+<!-- Item 2: PR submission (Neutral badge) -->
+<div class="flex items-center justify-between p-4 bg-[#FAF9F6] hover:bg-[#F0EEE9] transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-11 h-11 rounded-2xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] shrink-0">
+<span class="material-symbols-outlined text-[22px]">shopping_basket</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-body-sm text-[#2E3140] font-semibold truncate">
+                ส่ง PR-2026-0231 ขออนุมัติ
+              </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<!-- Pill badge neutral: text #5D6285 on #ECEDF2 -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-[#ECEDF2] text-[11px] font-title-md text-[#5D6285] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5D6285]"></span>
+                รออนุมัติ
+              </span>
+<span class="font-body-sm text-[12px] text-[#6B6F80] truncate">เครื่องดื่มชาเขียว 48 ขวด</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-code-sm text-code-sm text-[#6B6F80]">17:10</span>
+<span class="font-body-sm text-[11px] text-[#6B6F80]/80">เมื่อวาน</span>
+</div>
+</div>
+<!-- Separator line recessed -->
+<div class="h-[1px] w-full bg-[#E2DFD8]"></div>
+<!-- Item 3: Bakery stock disposal (Danger badge) -->
+<div class="flex items-center justify-between p-4 bg-[#FAF9F6] hover:bg-[#F0EEE9] transition-colors">
+<div class="flex items-center gap-3 min-w-0 pr-2">
+<div class="w-11 h-11 rounded-2xl bg-[#E8DFFA] flex items-center justify-center text-[#5A3590] shrink-0">
+<span class="material-symbols-outlined text-[22px]">bakery_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-body-sm text-[#2E3140] font-semibold truncate">
+                ตัดสต็อก ขนมปังโฮลวีท
+              </span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<!-- Pill badge error/danger: text #C2303A on #FFE3E5 -->
+<span class="inline-flex items-center gap-1.5 h-6 px-2.5 rounded-full bg-[#FFE3E5] text-[11px] font-title-md text-[#C2303A] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#C2303A]"></span>
+                หมดอายุ −5 ห่อ
+              </span>
+<span class="font-code-sm text-[11px] text-[#6B6F80]">SKU-BKR-09</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-code-sm text-code-sm text-[#6B6F80]">14:25</span>
+<span class="font-body-sm text-[11px] text-[#6B6F80]/80">เมื่อวาน</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Barcode Overlay Modal (hidden by default) -->
+<div class="fixed inset-0 z-50 bg-[#494D5F]/60 backdrop-blur-sm hidden items-end justify-center transition-all p-4 pb-safe" id="scan-dialog">
+<div class="w-full max-w-md bg-[#FAF9F6] border border-[#E2DFD8] rounded-[24px] p-6 shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-200">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#E8DFFA] flex items-center justify-center text-[#5A3590]">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-[#2E3140]">สแกนรหัสสินค้าด่วน</h4>
+</div>
+<button class="w-8 h-8 rounded-full bg-[#F0EEE9] flex items-center justify-center text-[#6B6F80]" id="close-scan-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="relative w-full h-44 rounded-2xl bg-[#494D5F] flex flex-col items-center justify-center overflow-hidden">
+<div class="absolute inset-x-6 top-1/2 -translate-y-1/2 h-0.5 bg-[#C2303A] shadow-[0_0_12px_#C2303A] animate-pulse"></div>
+<div class="border-2 border-dashed border-white/40 rounded-xl w-4/5 h-28 flex flex-col items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-white/60 text-[36px] mb-1">qr_code_scanner</span>
+<span class="font-code-sm text-code-sm text-white/80">จัดวางบาร์โค้ดให้อยู่ในกรอบ</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-eyebrow text-[11px] text-[#6B6F80] uppercase tracking-wider">หรือระบุ SKU ด้วยตนเอง</label>
+<div class="flex gap-2">
+<input class="flex-1 h-12 px-4 rounded-xl bg-[#F0EEE9] text-[#2E3140] font-code-md text-code-md outline-none border border-[#E2DFD8] focus:border-[#7A4FB0]" placeholder="เช่น 8850123456789" type="text">
+<button class="h-12 px-5 rounded-xl bg-[#7A4FB0] text-white font-title-md text-body-sm font-semibold">ค้นหา</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interaction for barcode trigger modal
+  const scanTrigger = document.getElementById('quick-scan-trigger');
+  const scanDialog = document.getElementById('scan-dialog');
+  const closeScanBtn = document.getElementById('close-scan-btn');
+
+  if (scanTrigger && scanDialog && closeScanBtn) {
+    scanTrigger.addEventListener('click', () => {
+      scanDialog.classList.remove('hidden');
+      scanDialog.classList.add('flex');
+    });
+
+    const hideDialog = () => {
+      scanDialog.classList.add('hidden');
+      scanDialog.classList.remove('flex');
+    };
+
+    closeScanBtn.addEventListener('click', hideDialog);
+    scanDialog.addEventListener('click', (e) => {
+      if (e.target === scanDialog) hideDialog();
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-[#FAF9F6] border-t border-[#E2DFD8] shadow-[0_-4px_20px_rgba(46,49,64,0.06)]" data-active-classes="text-[#7A4FB0] [&amp;_.tab-pill]:bg-[#E8DFFA] [&amp;_.tab-pill]:text-[#7A4FB0] font-semibold"><div class="flex items-center justify-around h-16 px-gutter-mobile"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] transition-colors text-[#7A4FB0] [&amp;_.tab-pill]:bg-[#E8DFFA] [&amp;_.tab-pill]:text-[#7A4FB0] font-semibold" data-path="home-screen" href="#"><div class="tab-pill w-12 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">storefront</span></div><span class="font-body-sm text-[11px] leading-tight">หน้าแรก</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="receive-goods" href="#"><div class="tab-pill w-12 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">package_2</span></div><span class="font-body-sm text-[11px] leading-tight">รับของ</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="purchase-requests" href="#"><div class="tab-pill w-12 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">shopping_cart</span></div><span class="font-body-sm text-[11px] leading-tight">ขอซื้อ</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[44px] text-[#6B6F80] hover:text-[#2E3140] transition-colors" data-path="stock-inventory" href="#"><div class="tab-pill w-12 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">inventory_2</span></div><span class="font-body-sm text-[11px] leading-tight">สต็อก</span></a></div></nav>
+
+
+
+
+
+
+
+
+
+</body></html>

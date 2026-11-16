@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="th"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"primary":"#7A4FB0","primary-hover":"#6A41A0","primary-container":"#6A41A0","primary-fixed":"#E8DFFA","primary-fixed-dim":"#d9b9ff","on-primary":"#ffffff","on-primary-fixed":"#2a0054","on-primary-fixed-variant":"#7A4FB0","secondary":"#5a5e70","secondary-fixed":"#E8DFFA","secondary-fixed-dim":"#c2c5db","on-secondary-fixed":"#171b2b","on-secondary-fixed-variant":"#424658","secondary-container":"#dee1f8","on-secondary-container":"#606476","tertiary":"#C2303A","tertiary-container":"#b32b35","tertiary-fixed":"#FFE3E5","on-tertiary-fixed":"#680010","error":"#ba1a1a","error-container":"#FFE3E5","on-error-container":"#C2303A","background":"#F0EEE9","surface":"#FAF9F6","surface-container":"#F0EEE9","surface-container-low":"#FAF9F6","surface-container-lowest":"#FAF9F6","surface-container-high":"#E8DFFA","surface-container-highest":"#E2DFD8","outline":"#8E8994","outline-variant":"#E2DFD8","on-background":"#2E3140","on-surface":"#2E3140","on-surface-variant":"#6B6F80","accent-sky":"#A0D2EB"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"0.75rem"},"fontFamily":{"label-md":["Outfit"],"body-lg":["Plus Jakarta Sans"],"metric-tabular":["Outfit"],"body-md":["Plus Jakarta Sans"],"label-lg":["Outfit"],"title-md":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Outfit"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"metric-tabular":["22px",{"lineHeight":"28px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display":["40px",{"lineHeight":"48px","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}]}}}}</script></head><body class="bg-[#F0EEE9] font-body-md text-[#2E3140] antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-[#FAF9F6] border-r border-[#E2DFD8] shadow-[0_1px_8px_rgba(0,0,0,0.02)] z-50 flex flex-col justify-between py-space-lg px-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-sm"><div class="w-10 h-10 rounded-full bg-[#E8DFFA] flex items-center justify-center text-[#7A4FB0] shadow-[0_4px_14px_0_rgba(122,79,176,0.15)]"><span class="material-symbols-outlined text-[#7A4FB0] text-[24px]">eco</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-[#2E3140] font-bold tracking-tight">StockFlow</span><span class="font-label-sm text-label-sm text-[#6B6F80] font-medium">Organic Retail OS</span></div></div><div class="px-space-xs"><button class="w-full flex items-center justify-center gap-space-xs py-space-sm px-space-md rounded-full bg-[#7A4FB0] text-white font-label-lg text-label-lg shadow-[0_4px_14px_0_rgba(122,79,176,0.25)] hover:bg-[#6A41A0] transition-all transform hover:-translate-y-0.5 active:translate-y-0" type="button"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>+ สร้างใบขอซื้อ</span></button></div><nav class="flex flex-col gap-space-xs"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-full transition-colors bg-[#E8DFFA] text-[#7A4FB0] font-semibold" data-path="overview" href="#"><span class="material-symbols-outlined text-[#7A4FB0] text-[20px]">grid_view</span><span class="font-title-md text-title-md text-[#7A4FB0]">ภาพรวมสต็อก</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-[#6B6F80] hover:bg-[#F0EEE9] hover:text-[#2E3140] transition-colors" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[#6B6F80] text-[20px]">shopping_bag</span><span class="font-title-md text-title-md">ใบสั่งซื้อ (PO)</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-[#6B6F80] hover:bg-[#F0EEE9] hover:text-[#2E3140] transition-colors" data-path="inventory-catalog" href="#"><span class="material-symbols-outlined text-[#6B6F80] text-[20px]">inventory_2</span><span class="font-title-md text-title-md">คลังสินค้าสด &amp; เกษตร</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-[#6B6F80] hover:bg-[#F0EEE9] hover:text-[#2E3140] transition-colors" data-path="receiving-inspect" href="#"><span class="material-symbols-outlined text-[#6B6F80] text-[20px]">verified</span><span class="font-title-md text-title-md">ตรวจรับสินค้าสด</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-[#6B6F80] hover:bg-[#F0EEE9] hover:text-[#2E3140] transition-colors" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[#6B6F80] text-[20px]">storefront</span><span class="font-title-md text-title-md">คู่ค้า &amp; วิสาหกิจ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-[#6B6F80] hover:bg-[#F0EEE9] hover:text-[#2E3140] transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[#6B6F80] text-[20px]">bar_chart</span><span class="font-title-md text-title-md">รายงานต้นทุน &amp; ขยะ</span></a></nav></div><div class="flex flex-col gap-space-sm pt-space-md bg-[#F0EEE9] border border-[#E2DFD8] rounded-DEFAULT p-space-sm"><div class="flex items-center justify-between text-[#6B6F80] px-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider">โหมดสาขา</span><span class="w-2 h-2 rounded-full bg-[#7A4FB0] animate-pulse"></span></div><div class="flex items-center gap-space-xs text-[#2E3140] font-title-md text-title-md px-space-xs"><span class="material-symbols-outlined text-[18px] text-[#7A4FB0]">store</span><span class="truncate">สาขา 2 (ท่าทอง)</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-[#FAF9F6]/90 backdrop-blur-xl border-b border-[#E2DFD8] shadow-[0_1px_8px_rgba(0,0,0,0.02)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex-1 max-w-xl"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-4 text-[#8E8994] text-[20px]">search</span><input class="w-full pl-11 pr-14 py-space-sm bg-[#F0EEE9] border border-[#E2DFD8] rounded-full text-[#2E3140] font-body-md text-body-md placeholder-[#8E8994] focus:outline-none focus:bg-[#FAF9F6] focus:ring-1 focus:ring-[#7A4FB0] shadow-sm transition-all" placeholder="ค้นหาบาร์โค้ด, รหัสสินค้า, หรือ PO..." type="text"/><kbd class="absolute right-3 px-space-xs py-0.5 rounded-DEFAULT bg-[#FAF9F6] border border-[#E2DFD8] text-[#6B6F80] font-label-sm text-label-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-[#FAF9F6] border border-[#E2DFD8] text-[#2E3140]"><span class="material-symbols-outlined text-[18px] text-[#7A4FB0]">pin_drop</span><span class="font-label-md text-label-md">สาขา 2 (ท่าทอง)</span><span class="material-symbols-outlined text-[16px] text-[#8E8994]">expand_more</span></div><button aria-label="การแจ้งเตือน" class="relative w-10 h-10 rounded-full bg-[#FAF9F6] border border-[#E2DFD8] shadow-[0_2px_6px_-1px_rgba(15,23,42,0.05)] flex items-center justify-center text-[#6B6F80] hover:text-[#2E3140] hover:bg-[#F0EEE9] transition-all" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#C2303A]"></span></button><div class="flex items-center gap-space-sm pl-space-xs py-1 pr-space-md rounded-full bg-[#FAF9F6] border border-[#E2DFD8]"><div class="w-8 h-8 rounded-full bg-[#7A4FB0] flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-white text-[18px]">person</span></div><div class="flex flex-col text-left pr-space-xs"><span class="font-label-md text-label-md text-[#2E3140] leading-tight">คุณนภา</span><span class="font-label-sm text-label-sm text-[#6B6F80] leading-tight">ผจก. สาขา 2</span></div></div></div></header><main class="relative pt-20 bg-[#F0EEE9] w-full min-h-screen px-space-lg pb-space-xl"><div class="flex flex-col w-full pb-space-xl">
+<!-- Toast Notification (Top floating subtle feedback) -->
+<aside aria-live="polite" class="fixed bottom-6 right-6 z-50 flex items-center gap-space-sm bg-[#2E3140] text-white px-space-md py-space-sm rounded-full shadow-[0_12px_32px_-4px_rgba(15,23,42,0.18)] transition-all duration-300 transform translate-y-0" id="toast-action">
+<span class="w-6 h-6 rounded-full bg-[#E8DFFA] text-[#7A4FB0] flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<span class="font-body-md text-body-md text-white">อนุมัติ PO-2026-0835 แล้ว</span>
+<button class="ml-2 font-label-md text-label-md text-[#A0D2EB] hover:text-[#E8DFFA] underline transition-colors" onclick="document.getElementById('toast-action').remove()" type="button">
+      เลิกทำ (Undo)
+    </button>
+</aside>
+<!-- Section 1: Hero Banner Block (Deep Slate #494D5F) -->
+<section class="relative w-full rounded-lg bg-[#494D5F] text-white p-space-lg md:p-space-xl overflow-hidden shadow-[0_8px_30px_rgba(73,77,95,0.2)] border border-[#E2DFD8]/20">
+<!-- Ambient blobs in slate & lilac -->
+<div class="absolute -right-16 -top-20 w-80 h-80 rounded-full bg-[#E8DFFA] opacity-10 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-16 w-64 h-64 rounded-full bg-[#7A4FB0] opacity-20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Date pill & Branch indicator -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-white/15 backdrop-blur-md text-white font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#A0D2EB] animate-ping"></span>
+            พฤหัสบดี 12 พ.ย. 2026
+          </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-white/10 text-white font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+            สาขา 2 (ท่าทอง)
+          </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-white/10 text-white font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">ac_unit</span>
+            ห้องเย็น: 3.8°C ปกติ
+          </span>
+</div>
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-white">
+            สวัสดีตอนเช้า คุณนภา
+          </h1>
+<p class="font-headline-sm text-headline-sm text-[#A0D2EB] font-semibold">
+            เช้านี้มี 3 เรื่องเร่งด่วนที่ต้องทำ เพื่อรักษาสต็อกสดและยอดขาย
+          </p>
+</div>
+<!-- Quick Mission Strip Pill -->
+<div class="flex items-center gap-space-xs bg-black/20 backdrop-blur-md rounded-full px-space-md py-space-xs max-w-fit">
+<span class="material-symbols-outlined text-[#E8DFFA] text-[18px]">bolt</span>
+<span class="font-label-md text-label-md text-white">
+            ลำดับภารกิจเร่งด่วน:
+          </span>
+<span class="font-body-md text-body-md text-white/90">
+            ตรวจวันหมดอายุ · อนุมัติ PO · ตรวจรับพัสดุ
+          </span>
+</div>
+</div>
+<!-- Produce Showcase Floating Graphic (Circular Bento Plate) -->
+<div class="lg:col-span-4 flex justify-end">
+<div class="relative group">
+<div class="w-44 h-44 md:w-52 md:h-52 rounded-full p-1.5 bg-white/20 backdrop-blur-md shadow-[0_12px_32px_-4px_rgba(0,0,0,0.3)] transition-transform duration-500 hover:scale-105">
+<img class="w-full h-full object-cover rounded-full" data-alt="A top-down vibrant overhead view of a fresh organic salad bowl with mixed greens, avocado slices, cherry tomatoes, and poached egg, bathed in natural morning sunlight on a clean soft mint surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4OU_Y5IFjMhU2UkvJX0O3XAsasLiHGMf0qap6XLBOXIUWRnxlD1oxWfOOImdm03ZWREbuvPWWcW_9BV3JMWnjUZXZG4CPDXyImdbJAOdXIn0OYhdCSqwNdrJrM1fZtU4sest8OgD8VryzMMMM1583w7R_Y1us8Xufh6h0PGxpw0wt08XAewvmURl10kOTyTPj4kWjUhzqUiEaitzqWKVr8FP-niVpBPeN4GQFwuM"/>
+</div>
+<!-- Overlapping badge chip -->
+<div class="absolute -bottom-2 -left-4 bg-[#FAF9F6] text-[#2E3140] px-space-sm py-1.5 rounded-full shadow-lg flex items-center gap-1.5 border border-[#E2DFD8]">
+<span class="w-2.5 h-2.5 rounded-full bg-[#11734A] animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-[#11734A] font-bold">สต็อกสด 96% พร้อมขาย</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: The 3 Main Priorities (Bento Style 3-Column Focus Cards) -->
+<section class="mt-space-lg w-full">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-[#7A4FB0]"></span>
+<h2 class="font-headline-sm text-headline-sm text-[#2E3140] font-bold">
+          3 ภารกิจหลักที่ต้องจัดการ
+        </h2>
+<span class="px-space-xs py-0.5 rounded-full bg-[#FFE3E5] text-[#C2303A] font-label-sm text-label-sm font-semibold">
+          สำคัญที่สุด
+        </span>
+</div>
+<span class="font-label-md text-label-md text-[#6B6F80]">
+        อัปเดตล่าสุด: เมื่อ 2 นาทีที่แล้ว
+      </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-md">
+<!-- Priority 1: อนุมัติใบสั่งซื้อ (Lilac Dusk Bento) -->
+<article class="relative flex flex-col justify-between bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-lg shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(122,79,176,0.12)] transition-all group">
+<!-- Top header row -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-[#E8DFFA] flex items-center justify-center text-[#7A4FB0]">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</span>
+<span class="font-label-md text-label-md text-[#6B6F80]">ภารกิจที่ 1</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-[#DDF3E8] text-[#11734A] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#11734A]"></span>
+              อยู่ในวงเงิน
+            </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-[#2E3140] font-bold">
+              อนุมัติใบสั่งซื้อ 3 ใบ
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6F80] mt-0.5">
+              คิวถัดไป: <span class="font-semibold text-[#2E3140]">PO-2026-0835</span> (ฟาร์มผักไฮโดรโปนิกส์)
+            </p>
+</div>
+<!-- Big Stat Highlight -->
+<div class="bg-[#F0EEE9] border border-[#E2DFD8] rounded-DEFAULT p-space-md flex flex-col gap-space-xs my-space-xs">
+<div class="flex items-baseline justify-between">
+<span class="font-label-sm text-label-sm text-[#6B6F80] uppercase">ยอดขออนุมัติรอบนี้</span>
+<span class="font-metric-tabular text-metric-tabular text-[#7A4FB0] font-bold tracking-tight">
+                ฿4,200
+              </span>
+</div>
+<!-- Budget Gauge Progress -->
+<div class="w-full bg-[#E8DFFA] rounded-full h-2 overflow-hidden mt-1">
+<div class="bg-[#7A4FB0] h-2 rounded-full transition-all duration-700" style="width: 84%"></div>
+</div>
+<div class="flex justify-between items-center text-[#6B6F80] font-label-sm text-label-sm">
+<span>ใช้วงเงินไปแล้ว 84%</span>
+<span class="font-medium text-[#2E3140]">เพดาน: ฿5,000</span>
+</div>
+</div>
+</div>
+<!-- Action Bottom -->
+<div class="pt-space-sm flex items-center gap-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-full bg-[#7A4FB0] text-white font-label-lg text-label-lg shadow-[0_4px_14px_0_rgba(122,79,176,0.3)] hover:bg-[#6A41A0] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>อนุมัติใบสั่งซื้อนี้</span>
+</button>
+<button aria-label="ดูรายละเอียด PO เพิ่มเติม" class="w-10 h-10 rounded-full bg-[#E8DFFA] text-[#7A4FB0] hover:bg-[#FAF9F6] border border-[#E2DFD8] transition-colors flex items-center justify-center shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Priority 2: ของใกล้หมดอายุ (Status Danger/Warning Focus Card) -->
+<article class="relative flex flex-col justify-between bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-lg shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(194,48,58,0.12)] transition-all ring-1 ring-[#C2303A]/20 group">
+<!-- Top header row -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-[#FFE3E5] flex items-center justify-center text-[#C2303A]">
+<span class="material-symbols-outlined text-[18px]">hourglass_bottom</span>
+</span>
+<span class="font-label-md text-label-md text-[#C2303A] font-bold">ภารกิจด่วนที่สุด</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-[#FFF0CC] text-[#8A5A00] font-label-sm text-label-sm font-semibold animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A5A00]"></span>
+              หมดอายุพรุ่งนี้
+            </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-[#2E3140] font-bold">
+              ของใกล้หมดอายุ 12 รายการ
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6F80] mt-0.5">
+              เร่งด่วน: <strong class="text-[#C2303A]">นมสด UHT รสจืด 1 ลิตร</strong> (คงเหลือ 8 กล่อง)
+            </p>
+</div>
+<!-- Simulation Price & Discount Box -->
+<div class="bg-[#FFE3E5]/40 border border-[#E2DFD8] rounded-DEFAULT p-space-md flex flex-col gap-space-xs my-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#6B6F80] font-medium">จำลองตั้งป้ายเหลืองลดล้างสต็อก</span>
+<span class="px-space-xs py-0.5 rounded-full bg-[#C2303A] text-white font-label-sm text-label-sm">
+                ลด 30%
+              </span>
+</div>
+<div class="flex items-baseline justify-between mt-1">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-[#C2303A] font-extrabold">฿29</span>
+<span class="font-body-sm text-body-sm line-through text-[#8E8994]">฿42</span>
+<span class="font-label-sm text-label-sm text-[#6B6F80]">/ กล่อง</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-[#6B6F80] block">คาดการณ์กู้คืนยอด</span>
+<span class="font-title-md text-title-md font-bold text-[#7A4FB0]">฿232</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bottom -->
+<div class="pt-space-sm flex items-center gap-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-full bg-[#7A4FB0] text-white font-label-lg text-label-lg shadow-[0_4px_14px_0_rgba(122,79,176,0.3)] hover:bg-[#6A41A0] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>สร้างป้ายโปรโมชัน</span>
+</button>
+<button aria-label="ดูรายการสินค้าใกล้หมดอายุทั้งหมด" class="w-10 h-10 rounded-full bg-[#E8DFFA] text-[#7A4FB0] hover:bg-[#FAF9F6] border border-[#E2DFD8] transition-colors flex items-center justify-center shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+</div>
+</article>
+<!-- Priority 3: รอรับของค้างส่ง (Lilac Dusk Bento with Warning Accent) -->
+<article class="relative flex flex-col justify-between bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-lg shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_-4px_rgba(122,79,176,0.12)] transition-all group">
+<!-- Top header row -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-full bg-[#E8DFFA] flex items-center justify-center text-[#7A4FB0]">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</span>
+<span class="font-label-md text-label-md text-[#6B6F80]">ภารกิจที่ 3</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-[#FFF0CC] text-[#8A5A00] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#8A5A00]"></span>
+              รอขนส่งมาส่ง
+            </span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-[#2E3140] font-bold">
+              รอรับของค้างส่ง 14 ลัง
+            </h3>
+<p class="font-body-sm text-body-sm text-[#6B6F80] mt-0.5">
+              PO-2026-0808 · บะหมี่กึ่งสำเร็จรูปและซอสปรุงรส
+            </p>
+</div>
+<!-- Countdown Timer Widget -->
+<div class="bg-[#F0EEE9] border border-[#E2DFD8] rounded-DEFAULT p-space-md flex flex-col gap-space-xs my-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-[#6B6F80] uppercase font-medium">กำหนดเส้นตายรับของ</span>
+<span class="material-symbols-outlined text-[#7A4FB0] text-[16px]">schedule</span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="flex flex-col items-center bg-[#FAF9F6] border border-[#E2DFD8] px-space-sm py-1 rounded-DEFAULT shadow-xs">
+<span class="font-metric-tabular text-metric-tabular text-[#2E3140] font-bold">20</span>
+<span class="font-label-sm text-label-sm text-[#6B6F80]">ชั่วโมง</span>
+</div>
+<span class="font-headline-sm text-[#2E3140] font-bold">:</span>
+<div class="flex flex-col items-center bg-[#FAF9F6] border border-[#E2DFD8] px-space-sm py-1 rounded-DEFAULT shadow-xs">
+<span class="font-metric-tabular text-metric-tabular text-[#2E3140] font-bold">14</span>
+<span class="font-label-sm text-label-sm text-[#6B6F80]">นาที</span>
+</div>
+<span class="font-body-sm text-body-sm text-[#6B6F80] ml-2 leading-tight">
+                จะยกเลิก PO อัตโนมัติในระบบ
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Bottom -->
+<div class="pt-space-sm flex items-center gap-space-xs">
+<button class="w-full py-space-sm px-space-md rounded-full bg-[#E8DFFA] hover:bg-[#d9b9ff] text-[#5A3590] font-label-lg text-label-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">barcode_scanner</span>
+<span>ตรวจรับสินค้าเข้าคลัง</span>
+</button>
+<button aria-label="ติดต่อผู้จัดส่งพัสดุ" class="w-10 h-10 rounded-full bg-[#FAF9F6] border border-[#E2DFD8] text-[#6B6F80] hover:text-[#2E3140] hover:bg-[#F0EEE9] transition-colors flex items-center justify-center shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 3: Supporting Proof Metrics & Telemetry Grid -->
+<section class="mt-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Left Bento: Proof Metric Waste Reduction Card (Span 7) -->
+<div class="lg:col-span-7 bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-lg shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-[#6B6F80]">ประสิทธิภาพสาขา 2</span>
+<h3 class="font-headline-sm text-headline-sm text-[#2E3140] font-bold mt-0.5">
+            ของเสียลดลง 58% ในเดือนนี้
+          </h3>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-[#ECEDF2] text-[#5D6285] font-label-sm text-label-sm font-semibold">
+          ข้อมูลจำลอง
+        </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-md items-center my-space-md">
+<!-- SVG Donut Metric (track #E8DFFA, fill #7A4FB0, percentage #2E3140) -->
+<div class="sm:col-span-5 flex flex-col items-center justify-center relative">
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-[#E8DFFA]" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-[#7A4FB0] transition-all duration-1000 ease-out" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="105.5" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-headline-md text-headline-md font-extrabold text-[#2E3140] leading-none">-58%</span>
+<span class="font-label-sm text-label-sm text-[#7A4FB0] font-semibold mt-1">ผ่านเป้าหมาย</span>
+</div>
+</div>
+</div>
+<!-- Breakdown Details -->
+<div class="sm:col-span-7 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-body-md text-body-md text-[#6B6F80]">มูลค่าของเสียเดิม</span>
+<span class="font-metric-tabular text-body-lg text-[#8E8994] line-through">฿9,600</span>
+</div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-body-md text-body-md text-[#2E3140] font-medium">มูลค่าของเสียปัจจุบัน</span>
+<span class="font-metric-tabular text-headline-sm text-[#7A4FB0] font-bold">฿4,030</span>
+</div>
+<div class="p-space-xs bg-[#F0EEE9] border border-[#E2DFD8] rounded-DEFAULT flex items-center gap-2 text-[#6B6F80] font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[#7A4FB0] text-[18px]">verified</span>
+<span>มาตรการตั้งป้ายลดราคาอัตโนมัติช่วยกู้คืนทุนได้ ฿5,570</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-sm text-label-sm text-[#6B6F80]">เกณฑ์มาตรฐานสาขา: ต่ำกว่า 5,000 บาท/เดือน</span>
+<a class="font-label-md text-label-md text-[#7A4FB0] hover:text-[#6A41A0] inline-flex items-center gap-1 transition-colors" href="#">
+          ดูรายงานเชิงลึก
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right Bento: Fresh Produce Daily Watchlist & Sticky Note (Span 5) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Fresh Catalog Preview Tile -->
+<div class="bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-full shrink-0 overflow-hidden shadow-sm border border-[#E2DFD8]">
+<img class="w-full h-full object-cover" data-alt="Close up of ripe fresh organic Hass avocados cut in halves and whole fresh greens on a soft rustic kitchen counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDer0xVMWIlpanJbIQRDVBEq8KIXm-fAwuLNYy_aDyqg17Bdfgo2L7e_yoNbHcaLE8gODl3sCJrxxKa7qMeBaqt13LGgNSrSDHstuIEB4D2hJhUKpXy17QBKQMkzqfYP8T2DCNCtmS8VJNaA6h7fAIiX6haoodlHPzamDHdW33O4lgOXbVa-Qz1HVS9OCOsYw4XMVgEnUzhUkOpRvlyb8pZjbTrv-COujfd4HdrfzY"/>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-[#2E3140] font-bold truncate">อะโวคาโดโครงการหลวง</span>
+<span class="font-label-md text-label-md text-[#11734A] font-semibold">สต็อกแน่น</span>
+</div>
+<span class="font-body-sm text-body-sm text-[#6B6F80]">รับเข้าเช้านี้: 25 กก. · คุณภาพเกรด A</span>
+</div>
+</div>
+<!-- Quick Manager Sticky Note (Eggify memo style adapted to Lilac Dusk warm pastel) -->
+<div class="bg-[#FAF9F6] border border-[#E2DFD8] rounded-lg p-space-md shadow-[0_4px_20px_-2px_rgba(15,23,42,0.04)] flex flex-col gap-space-xs text-[#2E3140] flex-1 justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 font-label-md text-label-md font-bold text-[#7A4FB0]">
+<span class="material-symbols-outlined text-[18px]">sticky_note_2</span>
+            บันทึกเวรเช้า (ผจก. นภา)
+          </div>
+<span class="font-label-sm text-label-sm text-[#6B6F80]">แก้ไขล่าสุด 07:45</span>
+</div>
+<ul class="font-body-sm text-body-sm flex flex-col gap-1 list-disc list-inside text-[#2E3140]">
+<li>ตรวจสอบอุณหภูมิห้องแช่เย็นผักสลัดช่วง 11:00 น.</li>
+<li>ติดป้ายลดราคา 30% ที่ชั้นวางนม UHT ก่อนเที่ยง</li>
+<li>โทรยืนยันคิวส่งรถกับวิสาหกิจบ้านโป่งรอบบ่าย</li>
+</ul>
+<div class="pt-space-xs flex justify-end">
+<button class="text-[12px] font-label-md text-[#7A4FB0] font-semibold hover:underline" type="button">
+            + เพิ่มบันทึกด่วน
+          </button>
+</div>
+</div>
+</div>
+</section>
+</div></main></div></body></html>
