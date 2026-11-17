@@ -64,14 +64,14 @@
 
 ```
 BA ──► UX/UI ──► SA ──► Dev ──► QA ──► DevOps ──► Release
- ✅       🚧
+ ✅      ✅     🚧
 ```
 
 | เฟส | เอกสาร | สถานะ |
 | --- | --- | --- |
 | Discovery (BA) | [docs/ba](docs/ba/README.md) | ✅ [docs-v0.1](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.1) |
-| UX/UI | [docs/ux](docs/ux) | 🚧 กำลังทำ |
-| System Design (SA) | [docs/sa](docs/sa) | ⏳ |
+| UX/UI | [docs/ux](docs/ux) | ✅ | [docs-v0.2](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.2) |
+| System Design (SA) | [docs/sa](docs/sa) | ⏳ | 
 | Development | [apps/](apps) | ⏳ |
 | Deploy | [docs/devops](docs/devops) | ⏳ |
 

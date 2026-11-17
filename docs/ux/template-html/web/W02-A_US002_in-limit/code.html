@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+
+<html lang="th"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-tertiary-fixed-variant":"#92002a","surface-container-highest":"#dae2fd","on-background":"#131b2e","surface-dim":"#d2d9f4","primary-fixed-dim":"#68dba9","primary-fixed":"#85f8c4","secondary-container":"#fea619","on-secondary-fixed-variant":"#653e00","on-error-container":"#93000a","tertiary":"#b90538","primary-container":"#00855d","error-container":"#ffdad6","tertiary-container":"#dc2c4f","surface-container":"#eaedff","inverse-on-surface":"#eef0ff","surface-variant":"#dae2fd","on-surface-variant":"#3d4a42","background":"#faf8ff","on-primary":"#ffffff","outline":"#6d7a72","on-error":"#ffffff","on-primary-container":"#f5fff7","outline-variant":"#bccac0","on-secondary-fixed":"#2a1700","on-secondary-container":"#684000","on-tertiary-fixed":"#40000d","tertiary-fixed-dim":"#ffb2b7","secondary-fixed-dim":"#ffb95f","primary":"#006948","surface-container-high":"#e2e7ff","secondary-fixed":"#ffddb8","on-surface":"#131b2e","surface-bright":"#faf8ff","tertiary-fixed":"#ffdadb","on-tertiary-container":"#fffbff","on-primary-fixed-variant":"#005137","error":"#ba1a1a","secondary":"#855300","surface-tint":"#006c4a","inverse-surface":"#283044","surface":"#faf8ff","surface-container-low":"#f2f3ff","inverse-primary":"#68dba9","on-primary-fixed":"#002114","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-sm":"0.5rem","space-xl":"2.5rem","margin":"2rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"0.75rem"},"fontFamily":{"label-md":["Outfit"],"body-lg":["Plus Jakarta Sans"],"metric-tabular":["Outfit"],"body-md":["Plus Jakarta Sans"],"label-lg":["Outfit"],"title-md":["Plus Jakarta Sans"],"display":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Outfit"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},"fontSize":{"label-md":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"metric-tabular":["22px",{"lineHeight":"28px","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display":["40px",{"lineHeight":"48px","fontWeight":"800"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}]}}}}</script><style id="lilac-dusk-theme-overrides">
+  body { background-color: #F0EEE9 !important; color: #181B29 !important; }
+  main { background-color: #F0EEE9 !important; }
+  aside { background-color: #FAF9F6 !important; border-right: 1px solid #E2DFD8 !important; box-shadow: none !important; }
+  header { background-color: #FAF9F6 !important; border-bottom: 1px solid #E2DFD8 !important; box-shadow: none !important; }
+  header input { background-color: #F0EEE9 !important; border: 1px solid #E2DFD8 !important; }
+  header kbd { background-color: #E2DFD8 !important; color: #4B4451 !important; }
+  .bg-surface-container-lowest, section.bg-surface-container-lowest, div.bg-surface-container-lowest {
+    background-color: #FAF9F6 !important;
+    border: 1px solid #E2DFD8 !important;
+  }
+  .bg-surface-container-low, section.bg-surface-container-low, div.bg-surface-container-low {
+    background-color: #F0EEE9 !important;
+    border: 1px solid #E2DFD8 !important;
+  }
+  /* Sidebar elements */
+  aside .bg-primary-fixed {
+    background-color: #E8DFFA !important;
+    color: #7A4FB0 !important;
+    box-shadow: none !important;
+  }
+  aside .bg-primary-fixed .material-symbols-outlined {
+    color: #7A4FB0 !important;
+  }
+  aside nav a {
+    color: #6B6F80 !important;
+  }
+  aside nav a:hover {
+    background-color: #E8DFFA !important;
+    color: #7A4FB0 !important;
+  }
+  /* Primary button */
+  aside button.bg-primary, #approve-po-btn.bg-primary, button.bg-primary {
+    background-color: #7A4FB0 !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 2px 8px rgba(122, 79, 176, 0.25) !important;
+  }
+  aside button.bg-primary:hover, #approve-po-btn:hover {
+    background-color: #613696 !important;
+  }
+  /* Secondary / Lilac Pill Buttons */
+  .bg-primary-fixed, button.bg-primary-fixed {
+    background-color: #E8DFFA !important;
+    color: #5A3590 !important;
+  }
+  button.bg-primary-fixed:hover {
+    background-color: #7A4FB0 !important;
+    color: #FFFFFF !important;
+  }
+  /* Progress Bar & Gauges */
+  .bg-surface-container-high {
+    background-color: #E8DFFA !important;
+  }
+  #gauge-bar, .bg-primary.rounded-full {
+    background-color: #7A4FB0 !important;
+  }
+  /* SVG Circle Gauge */
+  svg path.text-primary {
+    color: #7A4FB0 !important;
+    stroke: #7A4FB0 !important;
+  }
+  svg path.text-surface-container-high {
+    color: #E8DFFA !important;
+    stroke: #E8DFFA !important;
+  }
+  /* Hero / Status Pills - Semantic */
+  .bg-primary-fixed.text-on-primary-fixed-variant, #status-pill-container {
+    background-color: #DDF3E8 !important;
+    color: #11734A !important;
+  }
+  #status-pill-container span:first-child {
+    background-color: #11734A !important;
+  }
+  .bg-error-container {
+    background-color: #FFE3E5 !important;
+    color: #C2303A !important;
+  }
+  .bg-error-container .bg-error {
+    background-color: #C2303A !important;
+  }
+  .bg-secondary-fixed {
+    background-color: #FFF0CC !important;
+    color: #8A5A00 !important;
+  }
+  .bg-secondary-fixed/30 {
+    background-color: #FFF0CC !important;
+    color: #8A5A00 !important;
+  }
+  .border-l-secondary-container {
+    border-left-color: #8A5A00 !important;
+  }
+  /* Text colors */
+  .text-primary, a.text-primary, button.text-primary {
+    color: #7A4FB0 !important;
+  }
+  .text-secondary {
+    color: #8A5A00 !important;
+  }
+  .text-tertiary {
+    color: #C2303A !important;
+  }
+  /* Ambient Glow Replacement */
+  #po-approval-card .blur-3xl {
+    background-color: rgba(232, 223, 250, 0.4) !important;
+  }
+  /* Toast */
+  #action-toast {
+    background-color: #494D5F !important;
+    color: #FFFFFF !important;
+  }
+  #action-toast .bg-primary-fixed {
+    background-color: #7A4FB0 !important;
+    color: #FFFFFF !important;
+  }
+  #toast-undo-btn {
+    color: #E8DFFA !important;
+  }
+</style></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-space-lg px-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-sm px-space-sm"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-[0_4px_14px_0_rgba(5,150,105,0.2)]"><span class="material-symbols-outlined text-primary text-[24px]">eco</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">StockFlow</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Organic Retail OS</span></div></div><div class="px-space-xs"><button class="w-full flex items-center justify-center gap-space-xs py-space-sm px-space-md rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-[0_4px_14px_0_rgba(5,150,105,0.35)] hover:bg-primary-container transition-all transform hover:-translate-y-0.5 active:translate-y-0" type="button"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>+ สร้างใบขอซื้อ</span></button></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-semibold shadow-[0_2px_8px_rgba(0,105,72,0.08)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="overview" href="#" style="background-color: #E8DFFA; color: #7A4FB0; font-weight: 600;"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-title-md text-title-md">ภาพรวมสต็อก</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="purchase-orders" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="font-title-md text-title-md">ใบสั่งซื้อ (PO)</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="inventory-catalog" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-title-md text-title-md">คลังสินค้าสด &amp; เกษตร</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="receiving-inspect" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-title-md text-title-md">ตรวจรับสินค้าสด</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="suppliers" href="#"><span class="material-symbols-outlined text-[20px]">storefront</span><span class="font-title-md text-title-md">คู่ค้า &amp; วิสาหกิจ</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-DEFAULT text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span class="font-title-md text-title-md">รายงานต้นทุน &amp; ขยะ</span></a></nav></div><div class="flex flex-col gap-space-sm pt-space-md bg-surface-container-low/40 rounded-DEFAULT p-space-sm"><div class="flex items-center justify-between text-on-surface-variant px-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider">โหมดสาขา</span><span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><div class="flex items-center gap-space-xs text-on-surface font-title-md text-title-md px-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">store</span><span class="truncate">สาขา 2 (ท่าทอง)</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between gap-space-md"><div class="flex-1 max-w-xl"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute left-4 text-outline text-[20px]">search</span><input class="w-full pl-11 pr-14 py-space-sm bg-surface-container-low rounded-full text-on-surface font-body-md text-body-md placeholder-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary shadow-sm transition-all" placeholder="ค้นหาบาร์โค้ด, รหัสสินค้า, หรือ PO..." type="text"/><kbd class="absolute right-3 px-space-xs py-0.5 rounded-DEFAULT bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span><span class="font-label-md text-label-md">สาขา 2 (ท่าทอง)</span><span class="material-symbols-outlined text-[16px] text-outline">expand_more</span></div><button aria-label="การแจ้งเตือน" class="relative w-10 h-10 rounded-full bg-surface-container-lowest shadow-[0_2px_6px_-1px_rgba(15,23,42,0.05)] flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-tertiary-container"></span></button><div class="flex items-center gap-space-sm pl-space-xs py-1 pr-space-md rounded-full bg-surface-container-low/70"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col text-left pr-space-xs"><span class="font-label-md text-label-md text-on-surface leading-tight">คุณนภา</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">ผจก. สาขา 2</span></div></div></div></header><main class="relative pt-20 bg-background w-full min-h-screen px-space-lg pb-space-xl"><div class="flex flex-col w-full gap-space-lg">
+<!-- Top Banner / Manager Decision Context -->
+<section class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-lg shadow-sm" style="background-color: #494D5F; color: #FFFFFF; border: none;">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight" style="color: #FFFFFF;">การตัดสินใจของผู้จัดการ</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          กะเช้า · 12 พ.ย. 2026
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant" style="color: #E2DFD8;">
+        นภา ใจดี · ผู้จัดการสาขา 2 (ท่าทอง) · <span class="font-semibold text-on-surface">เพดานอนุมัติ ฿5,000 ต่อใบ</span> (เทียบยอดก่อน VAT)
+      </p>
+</div>
+<!-- Quick Stats Capsule -->
+<div class="flex items-center gap-space-md self-start md:self-auto bg-surface-container-low px-space-md py-space-sm rounded-full" style="background-color: rgba(255, 255, 255, 0.12); color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.2);">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<span class="font-label-md text-label-md text-on-surface" style="color: #FFFFFF;">รอพิจารณาด่วน</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1.5 font-metric-tabular text-label-lg text-primary">
+<span>3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-normal">รายการสำคัญ</span>
+</div>
+</div>
+</section>
+<!-- Main Bento Grid (68% Left Core Decision, 32% Right Tactical Panel) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- LEFT CORE DECISION COLUMN (8 cols on XL) -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg">
+<!-- PRIORITY 1: THE HERO COMPONENT (PO Approval Card) -->
+<div class="relative bg-surface-container-lowest p-space-xl rounded-lg shadow-md overflow-hidden" id="po-approval-card">
+<!-- Ambient decorative emerald glow -->
+<div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-primary-fixed-dim/20 blur-3xl pointer-events-none"></div>
+<!-- Card Top Bar & Simulation Switch -->
+<div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-mono px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface tracking-wider font-semibold">
+                PO-2026-0835
+              </span>
+<span class="inline-flex items-center gap-1 text-primary text-label-sm font-label-sm bg-primary-fixed/40 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                ตรวจแล้ว 3 SKU
+              </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">· บจก. ธารทิพย์ เบฟเวอเรจ</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">หมวดสินค้า: เครื่องดื่มออร์แกนิกและนมสดพาสเจอร์ไรส์</span>
+</div>
+<!-- Interactive Demo Simulation Switcher -->
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1 rounded-full self-start sm:self-auto">
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-lowest text-primary shadow-sm font-semibold" id="sim-safe-btn" type="button">
+              ● ในวงเงิน ฿4,200
+            </button>
+<button class="px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-all font-medium" id="sim-over-btn" type="button">
+              ○ เกินวงเงิน ฿8,500
+            </button>
+</div>
+</div>
+<!-- Center Numerical Impact Section -->
+<div class="relative flex flex-col md:flex-row md:items-baseline justify-between gap-space-md py-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">ยอดจัดซื้อรอบนี้</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                เทียบยอดก่อน VAT ต่อใบ
+              </span>
+</div>
+<div class="flex items-baseline gap-space-sm mt-1">
+<span class="font-display text-display text-on-surface tracking-tight font-extrabold font-metric-tabular" id="po-amount-display">
+                ฿4,200
+              </span>
+<span class="font-body-md text-body-md text-outline">ยอดรวมสุทธิรวม VAT 7% ฿4,494</span>
+</div>
+</div>
+<!-- Status Indicator Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant self-start md:self-end" id="status-pill-container">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-lg text-label-lg font-bold" id="status-text">อยู่ในวงเงิน (อนุมัติได้ทันที)</span>
+</div>
+</div>
+<!-- Budget Gauge & Limit Meter -->
+<div class="relative flex flex-col gap-space-xs pt-space-sm pb-space-lg">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface-variant font-medium">สัดส่วนวงเงินของสาขา:</span>
+<span class="font-bold text-primary font-metric-tabular" id="gauge-percent">84%</span>
+<span class="text-primary-container font-medium" id="remaining-text">(เหลือเพดาน ฿800)</span>
+</div>
+<div class="flex items-center gap-1 font-semibold text-on-surface font-metric-tabular">
+<span class="material-symbols-outlined text-[16px] text-outline">flag</span>
+<span>เพดานอนุมัติ ฿5,000</span>
+</div>
+</div>
+<!-- Progress Bar Container -->
+<div class="w-full h-3.5 bg-surface-container-high rounded-full overflow-hidden p-0.5 relative">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" id="gauge-bar" style="width: 84%;"></div>
+<!-- Marker line at 100% -->
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-outline rounded-full"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm text-outline pt-1">
+<span>฿0 (ฐานคำนวณ)</span>
+<span>จุดตัดสิทธิ์อนุมัติระดับสาขา (฿5,000)</span>
+</div>
+</div>
+<!-- Actions Panel -->
+<div class="relative flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md pt-space-md bg-surface-container-low/50 -mx-space-xl -mb-space-xl p-space-lg">
+<button class="inline-flex items-center justify-center gap-space-xs text-primary font-label-lg text-label-lg hover:underline py-2" id="view-items-trigger" type="button">
+<span class="material-symbols-outlined text-[20px]">format_list_bulleted</span>
+<span>ตรวจสอบรายการสินค้า (3 SKU สด)</span>
+</button>
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 sm:flex-none px-space-lg py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg hover:bg-surface-container-high shadow-sm transition-all text-center" id="return-po-btn" type="button">
+              ตีกลับใบสั่งซื้อ
+            </button>
+<button class="flex-1 sm:flex-none px-space-xl py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2" id="approve-po-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span id="approve-btn-label">อนุมัติใบสั่งซื้อ</span>
+</button>
+</div>
+</div>
+</div>
+<!-- PRIORITY 2: EXPIRING INVENTORY MANAGEMENT -->
+<section class="flex flex-col gap-space-md">
+<!-- Section Header with Filter Pills -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">สินค้าเร่งด่วนที่ต้องจัดการก่อนหมดอายุ</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">สินค้าเกษตร &amp; ผลิตภัณฑ์สดที่ต้องปรับลดราคาหรือตัดจำหน่าย</p>
+</div>
+</div>
+<!-- Urgency Filters -->
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+              หมดอายุแล้ว 2
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+              ใกล้หมดอายุ 7 วัน (5)
+            </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+              ทั้งหมด 12 รายการ
+            </span>
+</div>
+</div>
+<!-- 3 Rich Produce / Fresh Items Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Item Card 1: Milk -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between gap-space-md relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                  นม &amp; ผลิตภัณฑ์นม
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                  หมดอายุพรุ่งนี้
+                </span>
+</div>
+<!-- Product Visual + Info Header -->
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary shadow-inner shrink-0">
+<span class="material-symbols-outlined text-[28px]">water_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-bold truncate">นมสด UHT รสจืด 1 ลิตร</h3>
+<span class="font-label-sm text-label-sm font-mono text-outline font-medium">ล็อต L2610-C</span>
+</div>
+</div>
+<!-- Data Metrics Box -->
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-sm flex flex-col gap-1 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>จำนวนคงคลัง:</span>
+<span class="font-bold text-on-surface font-metric-tabular">8 กล่อง</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>มูลค่าทุนจม:</span>
+<span class="font-semibold text-tertiary font-metric-tabular">฿288</span>
+</div>
+</div>
+<!-- Tactical Recommendation -->
+<div class="p-2 rounded-DEFAULT bg-secondary-fixed/30 text-on-secondary-container text-body-sm font-body-sm">
+<div class="flex items-center gap-1 font-semibold text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_down</span>
+<span>แนะติดป้ายลด 30% ทันที</span>
+</div>
+<span class="text-body-sm">ขาย ฿29/กล่อง (กู้คืนทุน ฿232)</span>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-2 px-space-md rounded-full bg-primary-fixed text-on-primary-fixed-variant hover:bg-primary hover:text-on-primary font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>สร้างป้ายโปรโมชัน 30%</span>
+</button>
+</div>
+<!-- Item Card 2: Bakery -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between gap-space-md relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                  เบเกอรี่ &amp; แป้ง
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  เหลืออีก 2 วัน
+                </span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-secondary shadow-inner shrink-0">
+<span class="material-symbols-outlined text-[28px]">bakery_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-bold truncate">ขนมปังแซนด์วิช 400g</h3>
+<span class="font-label-sm text-label-sm font-mono text-outline font-medium">ล็อต B2611-05</span>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-sm flex flex-col gap-1 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>จำนวนคงคลัง:</span>
+<span class="font-bold text-on-surface font-metric-tabular">9 ห่อ</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>มูลค่าทุนจม:</span>
+<span class="font-semibold text-tertiary font-metric-tabular">฿270</span>
+</div>
+</div>
+<div class="p-2 rounded-DEFAULT bg-secondary-fixed/30 text-on-secondary-container text-body-sm font-body-sm">
+<div class="flex items-center gap-1 font-semibold text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_down</span>
+<span>แนะติดป้ายลด 20%</span>
+</div>
+<span class="text-body-sm">ขาย ฿24/ห่อ (กู้คืนทุน ฿216)</span>
+</div>
+</div>
+<button class="w-full py-2 px-space-md rounded-full bg-primary-fixed text-on-primary-fixed-variant hover:bg-primary hover:text-on-primary font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>สร้างป้ายโปรโมชัน 20%</span>
+</button>
+</div>
+<!-- Item Card 3: Yogurt -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between gap-space-md relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                  อาหารพร้อมทาน
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  เหลืออีก 3 วัน
+                </span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary-container shadow-inner shrink-0">
+<span class="material-symbols-outlined text-[28px]">breakfast_dining</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-bold truncate">โยเกิร์ตรสธรรมชาติ</h3>
+<span class="font-label-sm text-label-sm font-mono text-outline font-medium">ล็อต Y2610-21</span>
+</div>
+</div>
+<div class="bg-surface-container-low/60 rounded-DEFAULT p-space-sm flex flex-col gap-1 text-body-sm font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>จำนวนคงคลัง:</span>
+<span class="font-bold text-on-surface font-metric-tabular">14 ถ้วย</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>มูลค่าทุนจม:</span>
+<span class="font-semibold text-tertiary font-metric-tabular">฿182</span>
+</div>
+</div>
+<div class="p-2 rounded-DEFAULT bg-surface-container-low text-on-surface-variant text-body-sm font-body-sm">
+<div class="flex items-center gap-1 font-semibold text-label-sm font-label-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">local_offer</span>
+<span>แนะจัดชุด 3 ถ้วย ฿35</span>
+</div>
+<span class="text-body-sm">ระบายเร็วขึ้น 65% ใน 48 ชม.</span>
+</div>
+</div>
+<button class="w-full py-2 px-space-md rounded-full bg-surface-container-high text-on-surface hover:bg-primary-fixed hover:text-on-primary-fixed-variant font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">sell</span>
+<span>สร้างป้ายโปรโมชัน</span>
+</button>
+</div>
+</div>
+<div class="flex justify-end pt-space-xs">
+<a class="inline-flex items-center gap-1 text-primary hover:text-primary-container font-label-md text-label-md font-semibold transition-colors" href="#">
+<span>ดูรายการสินค้าสดรอจัดการทั้งหมด 12 รายการ</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</section>
+</div>
+<!-- RIGHT TACTICAL PANEL (4 cols on XL) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- PRIORITY 3: LATE SUPPLIER DELIVERIES (Auto-Cancel Risk) -->
+<section class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">local_shipping</span>
+<h2 class="font-title-md text-title-md text-on-surface">ติดตามของค้างส่ง</h2>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container animate-pulse"></span>
+</div>
+<!-- Policy Explainer Capsule -->
+<div class="p-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
+<span>ยอดค้างส่งจะถูกระบบ<strong>ยกเลิกอัตโนมัติเมื่อครบ 7 วัน</strong> ตามระเบียบจัดซื้อและคำนวณคืนงบสาขา</span>
+</div>
+<!-- Late Item 1 (Urgent: 20 Hours Left) -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low/50 flex flex-col gap-space-sm border-l-4 border-l-secondary-container">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-mono font-semibold text-on-surface">PO-2026-0808</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">บจก. สยามฟาร์มเฟรช</span>
+<span class="font-body-sm text-body-sm text-outline">ค้าง: บะหมี่กึ่งสำเร็จรูปและเครื่องปรุง (4 ลัง)</span>
+</div>
+</div>
+<!-- Digital Countdown Box -->
+<div class="bg-surface-container-lowest p-space-sm rounded-DEFAULT flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">เหลือเวลาก่อนตัดสิทธิ์</span>
+</div>
+<div class="font-metric-tabular text-metric-tabular text-secondary font-bold tracking-tight">
+              20 ชม. 14 นาที
+            </div>
+</div>
+<!-- Quick Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<button class="py-1.5 px-3 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm font-semibold shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
+<span>โทรเร่งผู้ขาย</span>
+</button>
+<button class="py-1.5 px-3 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm font-semibold shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+<span>ตรวจรับสินค้า</span>
+</button>
+</div>
+</div>
+<!-- Late Item 2 (2 Days Left) -->
+<div class="p-space-md rounded-DEFAULT bg-surface-container-low/50 flex flex-col gap-space-xs">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-mono font-semibold text-on-surface">PO-2026-0815</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">บจก. ธารทิพย์ เบฟเวอเรจ</span>
+<span class="font-body-sm text-body-sm text-outline">ค้าง: น้ำแร่ธรรมชาติ (7 แพ็ค)</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+              เหลือ 2 วัน 14 ชม.
+            </span>
+</div>
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-primary pt-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span>ผู้ขายแจ้งรถขนส่งรอบบ่ายวันนี้ (14:30 น.)</span>
+</div>
+</div>
+</section>
+<!-- SUPPORTING PERFORMANCE METRIC: Waste Reduction Progress -->
+<section class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">ดัชนีของเสียสาขาเดือนนี้</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-outline font-label-sm text-label-sm">ข้อมูลจำลอง</span>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Circular Progress Ring (Inline SVG under 2KB) -->
+<div class="relative w-20 h-20 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<!-- Background Circle -->
+<path class="text-surface-container-high stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3.5"></path>
+<!-- Progress Circle (58%) -->
+<path class="text-primary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="58, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-metric-tabular text-label-lg font-bold text-primary">-58%</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">ของเสียลดลง 58%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              มูลค่าเสียทิ้งลดจาก <span class="line-through text-outline font-metric-tabular">฿9,600</span> สู่ <span class="font-bold text-primary font-metric-tabular">฿4,030</span>
+</p>
+</div>
+</div>
+<!-- Branch KPI Note -->
+<div class="p-2.5 rounded-DEFAULT bg-primary-fixed/30 text-on-primary-fixed-variant text-label-sm font-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>เป้าหมายสาขา 2: ควบคุมของเสียต่ำกว่า ฿5,000 / เดือน (ผ่านเกณฑ์)</span>
+</div>
+</section>
+<!-- Mini Shortcut Card: Daily Fresh Inbound Overview -->
+<section class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">ตรวจรับสินค้าผักผลไม้เข้า</span>
+<span class="font-body-sm text-body-sm text-outline">รอบบ่ายรอเทียบตาชั่ง 2 PO</span>
+</div>
+</div>
+<button aria-label="ไปที่หน้าตรวจรับ" class="w-9 h-9 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface flex items-center justify-center shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</section>
+</div>
+</div>
+<!-- Bottom-Right Toast Notification (Micro-UX Polish) -->
+<div class="fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-3 rounded-full shadow-2xl flex items-center gap-space-sm transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none" id="action-toast">
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-body-md text-body-md font-medium" id="toast-message">อนุมัติ PO-2026-0835 แล้วเรียบร้อย</span>
+<button class="ml-2 font-label-md text-label-md text-inverse-primary hover:underline font-bold" id="toast-undo-btn" type="button">
+      เลิกทำ (Undo)
+    </button>
+<button class="text-inverse-on-surface/70 hover:text-inverse-on-surface ml-1" id="toast-close-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  (function initManagerDecision() {
+    const simSafeBtn = document.getElementById('sim-safe-btn');
+    const simOverBtn = document.getElementById('sim-over-btn');
+    const poAmountDisplay = document.getElementById('po-amount-display');
+    const gaugeBar = document.getElementById('gauge-bar');
+    const gaugePercent = document.getElementById('gauge-percent');
+    const remainingText = document.getElementById('remaining-text');
+    const statusPillContainer = document.getElementById('status-pill-container');
+    const statusText = document.getElementById('status-text');
+    const approveBtn = document.getElementById('approve-po-btn');
+    const approveBtnLabel = document.getElementById('approve-btn-label');
+    const actionToast = document.getElementById('action-toast');
+    const toastMessage = document.getElementById('toast-message');
+    const toastUndoBtn = document.getElementById('toast-undo-btn');
+    const toastCloseBtn = document.getElementById('toast-close-btn');
+
+    let currentMode = 'safe'; // 'safe' | 'over'
+    let toastTimeout = null;
+
+    function showToast(message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastMessage.textContent = message;
+      actionToast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      actionToast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+      toastTimeout = setTimeout(() => {
+        hideToast();
+      }, 5000);
+    }
+
+    function hideToast() {
+      actionToast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      actionToast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    }
+
+    function setSafeState() {
+      currentMode = 'safe';
+      // Pill buttons style
+      simSafeBtn.className = 'px-3 py-1 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-lowest text-primary shadow-sm font-semibold';
+      simOverBtn.className = 'px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-all font-medium';
+
+      // Amount
+      poAmountDisplay.textContent = '฿4,200';
+      poAmountDisplay.classList.remove('text-error');
+      poAmountDisplay.classList.add('text-on-surface');
+
+      // Gauge
+      gaugeBar.style.width = '84%';
+      gaugeBar.className = 'h-full bg-primary rounded-full transition-all duration-500 ease-out';
+      gaugePercent.textContent = '84%';
+      gaugePercent.className = 'font-bold text-primary font-metric-tabular';
+      remainingText.textContent = '(เหลือเพดาน ฿800)';
+      remainingText.className = 'text-primary-container font-medium';
+
+      // Status pill
+      statusPillContainer.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed text-on-primary-fixed-variant self-start md:self-end transition-all';
+      statusPillContainer.children[0].className = 'w-2 h-2 rounded-full bg-primary';
+      statusText.textContent = 'อยู่ในวงเงิน (อนุมัติได้ทันที)';
+
+      // Action Button
+      approveBtn.disabled = false;
+      approveBtn.className = 'flex-1 sm:flex-none px-space-xl py-2.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-md hover:bg-primary-container hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer';
+      approveBtnLabel.textContent = 'อนุมัติใบสั่งซื้อ';
+    }
+
+    function setOverState() {
+      currentMode = 'over';
+      // Pill buttons style
+      simOverBtn.className = 'px-3 py-1 rounded-full text-label-sm font-label-sm transition-all bg-surface-container-lowest text-error shadow-sm font-semibold';
+      simSafeBtn.className = 'px-3 py-1 rounded-full text-label-sm font-label-sm text-on-surface-variant hover:text-on-surface transition-all font-medium';
+
+      // Amount
+      poAmountDisplay.textContent = '฿8,500';
+      poAmountDisplay.classList.remove('text-on-surface');
+      poAmountDisplay.classList.add('text-error');
+
+      // Gauge
+      gaugeBar.style.width = '100%';
+      gaugeBar.className = 'h-full bg-error rounded-full transition-all duration-500 ease-out';
+      gaugePercent.textContent = '170%';
+      gaugePercent.className = 'font-bold text-error font-metric-tabular';
+      remainingText.textContent = '(เกินเพดาน ฿3,500)';
+      remainingText.className = 'text-error font-semibold';
+
+      // Status pill
+      statusPillContainer.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full bg-error-container text-on-error-container self-start md:self-end transition-all';
+      statusPillContainer.children[0].className = 'w-2 h-2 rounded-full bg-error animate-ping';
+      statusText.textContent = 'เกินเพดาน ฿5,000 (ต้องส่ง ผจก. เขตอนุมัติ)';
+
+      // Action Button modified for safety
+      approveBtn.disabled = false;
+      approveBtn.className = 'flex-1 sm:flex-none px-space-xl py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-label-lg text-label-lg shadow-md hover:bg-secondary-fixed hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer';
+      approveBtnLabel.textContent = 'ส่งต่อให้ผู้จัดการเขต';
+    }
+
+    simSafeBtn.addEventListener('click', setSafeState);
+    simOverBtn.addEventListener('click', setOverState);
+
+    approveBtn.addEventListener('click', () => {
+      if (currentMode === 'safe') {
+        showToast('✓ อนุมัติ PO-2026-0835 (฿4,200) สำเร็จ');
+      } else {
+        showToast('✈ ส่งต่อใบสั่งซื้อ PO-2026-0835 ไปยังผู้จัดการเขตแล้ว');
+      }
+    });
+
+    document.getElementById('return-po-btn').addEventListener('click', () => {
+      showToast('ตีกลับ PO-2026-0835 ไปยังแผนกจัดซื้อเพื่อแก้ไข');
+    });
+
+    toastUndoBtn.addEventListener('click', () => {
+      hideToast();
+      setTimeout(() => {
+        showToast('ยกเลิกการกระทำล่าสุดแล้ว');
+      }, 300);
+    });
+
+    toastCloseBtn.addEventListener('click', hideToast);
+  })();
+</script></main></div></body></html>
