@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="StockScribe.Api/StockScribe.Api.csproj" />
+  <Project Path="StockScribe.Tests/StockScribe.Tests.csproj" />
+</Solution>
