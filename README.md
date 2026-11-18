@@ -2,17 +2,18 @@
 
 ระบบจัดซื้อและสต็อกสำหรับซูเปอร์มาร์เก็ตหลายสาขา — ใบขอซื้อ → ใบสั่งซื้อ → รับของ → สต็อกรายล็อตพร้อมแจ้งเตือนวันหมดอายุ
 
-![Status](https://img.shields.io/badge/phase-SA%20%2F%20ADR-blue)
-![Docs](https://img.shields.io/badge/release-docs--v0.2-informational)
+![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20walking%20skeleton-orange)
+![Docs](https://img.shields.io/badge/release-docs--v0.3-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **สถานะ:** เฟส UX/UI เสร็จแล้ว · กำลังทำเฟส SA + ADR
+> **สถานะ:** เฟส BA, UX/UI และ SA เสร็จแล้ว · กำลังทำ **v0.4 Walking skeleton** (Nuxt + .NET API + PostgreSQL + MongoDB + Docker)
 
 | 🔗 | ลิงก์ |
 | --- | --- |
 | 🌐 Live Demo | _เร็วๆ นี้_ |
-| 📋 Project Board | [StockFlow MVP](https://github.com/users/ThedBoyZ/projects/2) |
-| 📄 เอกสาร BA | [docs/ba](docs/ba/README.md) |
+| 🎨 ดีไซน์ (Figma) | [StockScribe — UI v1.0](ใส่ลิงก์) |
+| 📋 Project Board | [StockScribe MVP](https://github.com/users/ThedBoyZ/projects/2) |
+| 📄 เอกสาร | [BA](docs/ba/README.md) · [UX/UI](docs/ux/README.md) · [SA](docs/sa/README.md) · [ADR](docs/adr/README.md) |
 | 📦 Releases | [Releases](https://github.com/ThedBoyZ/StockScribe/releases) |
 
 ---
@@ -38,55 +39,83 @@
 
 ## ฟีเจอร์หลัก (MVP)
 
+ลำดับพัฒนาตาม [SA README](docs/sa/README.md#ลำดับ-dev-walking-skeleton-ก่อน)
+
 | Story | ฟีเจอร์ | สถานะ |
 | --- | --- | --- |
-| [#1](https://github.com/ThedBoyZ/StockScribe/issues/1) | รับของไม่ครบตาม PO | ⏳ Ready |
-| [#2](https://github.com/ThedBoyZ/StockScribe/issues/2) | อนุมัติ PO ตามวงเงิน | ⏳ Ready |
-| [#3](https://github.com/ThedBoyZ/StockScribe/issues/3) | แจ้งเตือนสินค้าใกล้หมดอายุ | ⏳ Ready |
-| [#4](https://github.com/ThedBoyZ/StockScribe/issues/4) | เลือกหน่วยใน PR และแปลงเป็นหน่วยซื้อ | ⏳ Ready |
-| [#5](https://github.com/ThedBoyZ/StockScribe/issues/5) | รวม PR หลายสาขาเป็น PO แยกตามผู้ขาย | ⏳ Ready |
-| [#6](https://github.com/ThedBoyZ/StockScribe/issues/6) | สร้าง PR อัตโนมัติจากสินค้าต่ำกว่า reorder point | ⏳ Ready |
+| [#2](https://github.com/ThedBoyZ/StockScribe/issues/2) | อนุมัติ PO ตามวงเงิน | ⏳ Ready · Slice 2 |
+| [#1](https://github.com/ThedBoyZ/StockScribe/issues/1) | รับของไม่ครบตาม PO | ⏳ Ready · Slice 3 |
+| [#3](https://github.com/ThedBoyZ/StockScribe/issues/3) | แจ้งเตือนสินค้าใกล้หมดอายุ | ⏳ Ready · Slice 4 |
+| [#4](https://github.com/ThedBoyZ/StockScribe/issues/4) | เลือกหน่วยใน PR และแปลงเป็นหน่วยซื้อ | ⏳ Ready · Slice 5 |
+| [#5](https://github.com/ThedBoyZ/StockScribe/issues/5) | รวม PR หลายสาขาเป็น PO แยกตามผู้ขาย | ⏳ Ready · Slice 5 |
+| [US-007](docs/ba/user-stories/US-007-send-po-to-supplier.md) | ส่ง PO ให้ผู้ขายเป็น PDF | 📝 Draft · Slice 5 |
+| [#6](https://github.com/ThedBoyZ/StockScribe/issues/6) | สร้าง PR อัตโนมัติจากสินค้าต่ำกว่า reorder point | ⏳ Ready · Slice 6 |
 
 ## Business Flow
 
 ![To-Be flow](docs/ba/business-flow/images/to-be.png)
 
+## สถาปัตยกรรม
+
+```
+มือถือ / เดสก์ท็อป ──HTTPS──► Nginx ──► Nuxt 4 (SPA, static)
+                                  └──► ASP.NET Core API ──► PostgreSQL (ธุรกรรม)
+                                                        └──► MongoDB (audit log, แจ้งเตือน)
+```
+
+รายละเอียดใน [architecture.md](docs/sa/architecture.md) · เหตุผลของแต่ละการตัดสินใจใน [ADR](docs/adr/README.md)
+
 ## Tech Stack
 
 | ชั้น | เทคโนโลยี |
 | --- | --- |
-| Frontend | Nuxt 4 · Vue 3 · TypeScript · Composition API |
-| Backend | ASP.NET Core (.NET 10) · Entity Framework Core · REST API |
+| Frontend | Nuxt 4 · Vue 3 · TypeScript · Composition API · Tailwind · Pinia |
+| Backend | ASP.NET Core (.NET 10) · Entity Framework Core · REST API · Serilog |
 | Database | PostgreSQL (Neon) · MongoDB (Atlas) |
-| DevOps | Docker · GitHub Actions · Google Compute Engine · Nginx |
+| Testing | xUnit · Testcontainers · Playwright |
+| DevOps | Docker · GitHub Actions · GHCR · Google Compute Engine · Nginx |
 
 ## กระบวนการทำงาน
 
 ```
 BA ──► UX/UI ──► SA ──► Dev ──► QA ──► DevOps ──► Release
- ✅      ✅     🚧
+ ✅      ✅      ✅     🚧
 ```
 
-| เฟส | เอกสาร | สถานะ |
-| --- | --- | --- |
-| Discovery (BA) | [docs/ba](docs/ba/README.md) | ✅ [docs-v0.1](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.1) |
-| UX/UI | [docs/ux](docs/ux) | ✅ | [docs-v0.2](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.2) |
-| System Design (SA) | [docs/sa](docs/sa) | ⏳ | 
-| Development | [apps/](apps) | ⏳ |
-| Deploy | [docs/devops](docs/devops) | ⏳ |
+| เฟส | เอกสาร | สถานะ | Release |
+| --- | --- | --- | --- |
+| Discovery (BA) | [docs/ba](docs/ba/README.md) | ✅ | [docs-v0.1](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.1) |
+| UX/UI + AC v1.1 | [docs/ux](docs/ux/README.md) | ✅ | [docs-v0.2](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.2) |
+| System Design (SA + ADR) | [docs/sa](docs/sa/README.md) · [docs/adr](docs/adr/README.md) | ✅ | [docs-v0.3](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.3) |
+| Development | [apps/](apps) | 🚧 Walking skeleton | v0.4 |
+| QA | [docs/qa](docs/qa) | ⏳ | |
+| Deploy | [docs/devops](docs/devops) | ⏳ | |
 
 ## โครงสร้าง Repo
 
 ```
-apps/web      → Nuxt frontend
-apps/api      → .NET backend
-deploy/       → Docker, Nginx, scripts
-docs/         → เอกสารแยกตามบทบาท (BA, UX, SA, QA, DevOps)
+apps/
+  web/        → Nuxt 4 frontend (SPA)
+  api/        → .NET 10 API + tests
+deploy/       → Nginx บน VM, สคริปต์ deploy/rollback
+docs/
+  ba/         → problem statement, สัมภาษณ์, user stories
+  ux/         → ดีไซน์, screen inventory, annotations
+  sa/         → architecture, ERD, state machines, RBAC, API spec
+  adr/        → บันทึกการตัดสินใจทางเทคนิค
+  qa/ devops/ releases/
+docker-compose.yml  → รันทั้งระบบในเครื่อง
 ```
 
 ## เริ่มต้นใช้งาน (Local)
 
-_จะเพิ่มเมื่อเริ่มเฟส Development_
+> 🚧 กำลังทำใน v0.4 · ต้องมี Docker
+
+```bash
+cp .env.example .env
+docker compose up --build
+# เปิด http://localhost:8080 · สถานะระบบ http://localhost:8080/health/ready
+```
 
 ## การมีส่วนร่วม
 
@@ -94,4 +123,4 @@ _จะเพิ่มเมื่อเริ่มเฟส Development_
 
 ---
 
-_ข้อมูลในบันทึกสัมภาษณ์เป็นข้อมูลสมมติเพื่อการฝึกกระบวนการทำงาน_
+_ชื่อร้าน ผู้ขาย และข้อมูลในบันทึกสัมภาษณ์เป็นข้อมูลสมมติเพื่อการฝึกกระบวนการทำงาน_
