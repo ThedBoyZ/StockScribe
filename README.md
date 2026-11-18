@@ -109,13 +109,39 @@ docker-compose.yml  → รันทั้งระบบในเครื่�
 
 ## เริ่มต้นใช้งาน (Local)
 
-> 🚧 กำลังทำใน v0.4 · ต้องมี Docker
+ต้องมี Docker เท่านั้น
 
 ```bash
-cp .env.example .env
+cp .env.example .env        # ไม่บังคับ · ถ้าไม่มีจะใช้ค่า default
 docker compose up --build
 # เปิด http://localhost:8080 · สถานะระบบ http://localhost:8080/health/ready
 ```
+
+compose จะรัน PostgreSQL และ MongoDB → `migrate` (EF Core migration แล้วจบ) → `api` → `web` (nginx เสิร์ฟ SPA และส่ง `/api`, `/health` ต่อให้ API)
+
+> ถ้าพอร์ต 8080 มีโปรแกรมอื่นใช้อยู่ ให้ตั้ง `WEB_PORT=8081` ใน `.env`
+
+### พัฒนาแบบ hot reload
+
+ต้องมี .NET 10 SDK และ Node 24
+
+```bash
+docker compose up -d postgres mongo                                    # DB อย่างเดียว (5433, 27017)
+cd apps/api && dotnet run --project StockScribe.Api --launch-profile http   # API → :5089
+cd apps/web && npm install && npm run dev                              # เว็บ → http://localhost:3000
+```
+
+สร้างตารางครั้งแรก: `cd apps/api && ASPNETCORE_ENVIRONMENT=Development dotnet ef database update --project StockScribe.Api`
+
+### Tests
+
+```bash
+cd apps/api
+dotnet test StockScribe.slnx                                     # ทั้งหมด (integration ต้องเปิด Docker)
+dotnet test StockScribe.slnx --filter "Category!=Integration"   # unit อย่างเดียว
+```
+
+integration test ใช้ Testcontainers สร้าง PostgreSQL และ MongoDB ชั่วคราวเอง ไม่ใช้ DB ใน compose
 
 ## การมีส่วนร่วม
 
