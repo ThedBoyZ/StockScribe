@@ -1,0 +1,86 @@
+# StockScribe · local stack
+#
+#   cp .env.example .env      # optional; defaults below work without it
+#   docker compose up --build
+#   → http://localhost:8080   (web)   · http://localhost:8080/health/ready
+#
+# Only for local runs. Production uses managed DBs (Neon, Atlas) and images from GHCR.
+
+name: stockscribe
+
+# GSS Encryption Mode=Disable: no Kerberos here, and it stops Npgsql looking for libgssapi_krb5 in the image.
+x-postgres-connection: &postgres-connection >-
+  Host=postgres;Port=5432;Database=${POSTGRES_DB:-stockscribe};Username=${POSTGRES_USER:-stockscribe};Password=${POSTGRES_PASSWORD:-stockscribe};GSS Encryption Mode=Disable
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-stockscribe}
+      POSTGRES_USER: ${POSTGRES_USER:-stockscribe}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-stockscribe}
+    # 5433 on the host: a native PostgreSQL often already owns 5432 on Windows.
+    # Also lets `dotnet run` (appsettings.Development.json) use this database.
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mongo:
+    image: mongo:8
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Applies EF Core migrations once, then exits. The api waits for it to succeed.
+  migrate:
+    build:
+      context: ./apps/api
+      target: migrator
+    environment:
+      ConnectionStrings__Postgres: *postgres-connection
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  api:
+    build:
+      context: ./apps/api
+      target: api
+    environment:
+      ConnectionStrings__Postgres: *postgres-connection
+      Mongo__ConnectionString: mongodb://mongo:27017
+      Mongo__Database: ${MONGO_DATABASE:-stockscribe}
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      mongo:
+        condition: service_healthy
+    # Same cap as on the e2-micro VM (1 GB RAM), so memory problems show up locally.
+    mem_limit: 400m
+    restart: unless-stopped
+    # No published port: the browser reaches the API through web (same origin).
+
+  web:
+    build: ./apps/web
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  mongo-data:
