@@ -1,0 +1,19 @@
+# Keep the API build context small and free of local-only files.
+**/bin/
+**/obj/
+**/TestResults/
+**/.vs/
+**/*.user
+**/efbundle*
+
+# Tests are run in CI, not shipped in the image.
+StockScribe.Tests/
+
+# Local dev settings (localhost connection strings); containers get config from env vars.
+**/appsettings.Development.json
+**/Properties/launchSettings.json
+
+**/.env
+**/.env.*
+Dockerfile
+.dockerignore
