@@ -1,0 +1,14 @@
+# Dependencies and build output are recreated inside the image.
+node_modules/
+.nuxt/
+.output/
+.nitro/
+.data/
+.cache/
+dist
+*.log
+
+.env
+.env.*
+Dockerfile
+.dockerignore

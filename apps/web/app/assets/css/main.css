@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Lilac Dusk tokens live in tailwind.config.ts (see docs/ux/DESIGN.md). */
+@config "../../../tailwind.config.ts";
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-body-md text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight;
+  }
+
+  :focus-visible {
+    @apply shadow-focus outline-none;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
