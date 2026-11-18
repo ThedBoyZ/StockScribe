@@ -6,7 +6,7 @@
 ![Docs](https://img.shields.io/badge/release-docs--v0.1-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **สถานะ:** เฟส Discovery (BA) เสร็จแล้ว · กำลังทำเฟส UX/UI
+> **สถานะ:** เฟส UX/UI เสร็จแล้ว · กำลังทำเฟส SA + ADR
 
 | 🔗 | ลิงก์ |
 | --- | --- |
