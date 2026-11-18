@@ -2,8 +2,8 @@
 
 ระบบจัดซื้อและสต็อกสำหรับซูเปอร์มาร์เก็ตหลายสาขา — ใบขอซื้อ → ใบสั่งซื้อ → รับของ → สต็อกรายล็อตพร้อมแจ้งเตือนวันหมดอายุ
 
-![Status](https://img.shields.io/badge/phase-UX%20%2F%20UI-blue)
-![Docs](https://img.shields.io/badge/release-docs--v0.1-informational)
+![Status](https://img.shields.io/badge/phase-SA%20%2F%20ADR-blue)
+![Docs](https://img.shields.io/badge/release-docs--v0.2-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 > **สถานะ:** เฟส UX/UI เสร็จแล้ว · กำลังทำเฟส SA + ADR
