@@ -2,6 +2,7 @@
 
 ระบบจัดซื้อและสต็อกสำหรับซูเปอร์มาร์เก็ตหลายสาขา — ใบขอซื้อ → ใบสั่งซื้อ → รับของ → สต็อกรายล็อตพร้อมแจ้งเตือนวันหมดอายุ
 
+[![CI](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml)
 ![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20walking%20skeleton-orange)
 ![Docs](https://img.shields.io/badge/release-docs--v0.3-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
