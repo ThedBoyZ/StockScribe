@@ -74,7 +74,7 @@
 | Backend | ASP.NET Core (.NET 10) · Entity Framework Core · REST API · Serilog |
 | Database | PostgreSQL (Neon) · MongoDB (Atlas) |
 | Testing | xUnit · Testcontainers · Playwright |
-| DevOps | Docker · GitHub Actions · GHCR · Google Compute Engine · Nginx |
+| DevOps | Docker · GitHub Actions (CI/CD) · GHCR · AWS EC2 · Nginx · Let's Encrypt |
 
 ## กระบวนการทำงาน
 

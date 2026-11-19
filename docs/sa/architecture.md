@@ -9,15 +9,15 @@ flowchart LR
     D["เดสก์ท็อป<br/>ผู้จัดการ · จัดซื้อ · เจ้าของ"]
   end
 
-  subgraph VM["Google Compute Engine e2-micro · Docker Compose"]
+  subgraph VM["AWS EC2 t3.micro · Sydney · Docker Compose"]
     N["Nginx<br/>TLS · static · reverse proxy"]
     W["Nuxt 4 SPA<br/>ไฟล์ static"]
     A["ASP.NET Core API (.NET 10)<br/>REST /api/v1 · jobs เบื้องหลัง"]
   end
 
-  PG[("Neon PostgreSQL<br/>ธุรกรรม")]
-  MG[("MongoDB Atlas M0<br/>audit log · แจ้งเตือน")]
-  DNS["DuckDNS<br/>stockflow.duckdns.org"]
+  PG[("Neon PostgreSQL · Sydney<br/>ธุรกรรม")]
+  MG[("MongoDB Atlas M0 · Sydney<br/>audit log · แจ้งเตือน")]
+  DNS["DuckDNS<br/>→ Elastic IP"]
   GH["GitHub Actions<br/>build · test · push GHCR · deploy"]
 
   M & D -->|HTTPS| DNS --> N
@@ -84,16 +84,17 @@ apps/api/
 
 | ขั้น | ทำอะไร |
 | --- | --- |
-| PR | lint + unit + integration (Testcontainers) + build |
-| merge เข้า main | build image `api` และ `web` → push GHCR · สร้าง EF migration bundle |
-| deploy | ssh เข้า VM → รัน migration bundle → `docker compose pull && up -d` → เช็ก `/health/ready` ถ้าไม่ผ่าน rollback เป็น image tag ก่อนหน้า |
+| PR | `ci.yml`: build + unit + integration (Testcontainers) + typecheck + compose smoke test |
+| merge เข้า main | CI ผ่าน → `cd.yml` build image `api`, `migrator` (EF bundle), `web` → push GHCR แท็ก `sha-<7 ตัว>` |
+| deploy | ssh เข้า VM → `deploy/scripts/deploy.sh`: pull → รัน migration bundle → `docker compose up -d` → เช็ก `/health/ready` ถ้าไม่ผ่าน rollback เป็น image tag ก่อนหน้า |
 
-**ข้อจำกัดของ e2-micro (RAM 1 GB):** ไม่รัน DB บน VM · build image บน GitHub Actions เท่านั้น · เพิ่ม swap 2 GB · จำกัด memory ของ container API ที่ 400 MB
+**ข้อจำกัดของ t3.micro (RAM 1 GB):** ไม่รัน DB บน VM · build image บน GitHub Actions เท่านั้น · เพิ่ม swap 2 GB · จำกัด memory ของ container API ที่ 400 MB · ไม่มีอะไร poll `/health/ready` ตลอดเวลา เพื่อให้ Neon หลับได้
 
-**Region:** VM `us-west1` (Oregon) · เลือก Neon และ Atlas ที่ region ใกล้ Oregon ให้มากที่สุด เพื่อลด latency ระหว่าง API กับ DB
+**Region:** ทุกชิ้นอยู่ `ap-southeast-2` (Sydney) เพราะ AWS Free Plan ใช้ได้ region เดียว (ADR-0006) · ขั้นตอนตั้งค่า VM อยู่ใน [deploy/README.md](../../deploy/README.md)
 
 ## ประวัติการแก้ไข
 
 | วันที่ | การเปลี่ยนแปลง |
 | --- | --- |
 | 17 พ.ย. 2026 | ฉบับแรก |
+| 20 พ.ย. 2026 | ย้าย hosting จาก GCE (us-west1) ไป AWS EC2 Sydney พร้อม Neon และ Atlas (ADR-0006) |

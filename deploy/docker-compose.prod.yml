@@ -1,0 +1,73 @@
+# StockScribe · production stack on the EC2 VM (/opt/stockscribe)
+#
+# Do not run this by hand with `docker compose up`: use scripts/deploy.sh <tag>,
+# which sets IMAGE_TAG, runs migrations first and checks health afterwards.
+#
+# Secrets come from /opt/stockscribe/.env (see deploy/.env.example). It lives only on the VM.
+#
+#   Internet ──:80/:443──► proxy (TLS) ──► web (SPA + /api, /health) ──► api ──► Neon / Atlas
+
+name: stockscribe
+
+services:
+  # EF Core migration bundle. Runs once per deploy (`compose run --rm migrate`), never by `up`.
+  migrate:
+    image: ${IMAGE_REGISTRY:-ghcr.io/thedboyz}/stockscribe-migrator:${IMAGE_TAG:?run via scripts/deploy.sh}
+    profiles: [migrate]
+    environment:
+      ConnectionStrings__Postgres: ${POSTGRES_CONNECTION:?missing in .env}
+    restart: "no"
+
+  api:
+    image: ${IMAGE_REGISTRY:-ghcr.io/thedboyz}/stockscribe-api:${IMAGE_TAG:?run via scripts/deploy.sh}
+    environment:
+      ConnectionStrings__Postgres: ${POSTGRES_CONNECTION:?missing in .env}
+      Mongo__ConnectionString: ${MONGO_CONNECTION:?missing in .env}
+      Mongo__Database: ${MONGO_DATABASE:-stockscribe}
+    # t3.micro has 1 GB RAM (+2 GB swap). Same cap as the local compose file.
+    mem_limit: 400m
+    restart: unless-stopped
+    # No published port and no Docker healthcheck on purpose: nothing should poll
+    # /health/ready all day, or Neon's compute never scales to zero.
+
+  web:
+    image: ${IMAGE_REGISTRY:-ghcr.io/thedboyz}/stockscribe-web:${IMAGE_TAG:?run via scripts/deploy.sh}
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Public entry point: TLS, domain, security headers. Config: nginx/templates/.
+  proxy:
+    image: nginx:1.29-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:?missing in .env}
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates:ro
+      - ./nginx/90-reload-certs.envsh:/docker-entrypoint.d/90-reload-certs.envsh:ro
+      - letsencrypt:/etc/letsencrypt:ro
+      - certbot-www:/var/www/certbot:ro
+    depends_on:
+      - web
+    mem_limit: 64m
+    restart: unless-stopped
+
+  # Renews the Let's Encrypt certificate (checks twice a day, renews 30 days before expiry).
+  # The first certificate is requested by scripts/deploy.sh.
+  certbot:
+    image: certbot/certbot:v4.0.0
+    entrypoint:
+      - /bin/sh
+      - -c
+      - trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done
+    volumes:
+      - letsencrypt:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    mem_limit: 128m
+    restart: unless-stopped
+
+volumes:
+  letsencrypt:
+  certbot-www:
