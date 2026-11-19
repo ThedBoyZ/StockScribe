@@ -9,5 +9,6 @@
 | [0003](0003-demo-auth-jwt-cookie.md) | ล็อกอินเดโมด้วย persona + JWT ใน cookie httpOnly | Accepted |
 | [0004](0004-nuxt-spa-static.md) | Nuxt 4 แบบ SPA build เป็น static เสิร์ฟด้วย Nginx | Accepted |
 | [0005](0005-money-and-quantity.md) | เงินใช้ numeric(12,2) · จำนวนเป็นจำนวนเต็มในหน่วยฐาน | Accepted |
+| [0006](0006-hosting-aws-ec2-sydney.md) | โฮสต์บน AWS EC2 t3.micro ที่ Sydney แทน Google Compute Engine | Accepted |
 
 แม่แบบ: บริบท → ตัดสินใจ → ผลที่ตามมา → ทางเลือกที่ไม่เลือก

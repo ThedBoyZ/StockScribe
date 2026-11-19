@@ -1,0 +1,5 @@
+#!/bin/sh
+# Sourced by the nginx image entrypoint (/docker-entrypoint.d/) before nginx starts.
+# certbot renews the certificate in a separate container, so reload nginx every 6 h
+# to pick up the new files. Must be executable, or the entrypoint ignores it.
+(while :; do sleep 21600; nginx -s reload; done) &
