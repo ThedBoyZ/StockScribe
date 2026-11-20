@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using Serilog;
 using Serilog.Formatting.Compact;
+using StockScribe.Api.Features.Auth;
 using StockScribe.Api.Infrastructure.Mongo;
 using StockScribe.Api.Infrastructure.Persistence;
 
@@ -57,6 +58,9 @@ try
     // ---- Time ----
     builder.Services.AddSingleton(TimeProvider.System);
 
+    // ---- Auth: demo persona login → JWT in the sf_session cookie (ADR-0003) + demo seed ----
+    builder.Services.AddStockScribeAuth();
+
     // ---- Errors: RFC 9457 ProblemDetails with traceId ----
     builder.Services.AddProblemDetails(options =>
         options.CustomizeProblemDetails = ctx =>
@@ -74,6 +78,8 @@ try
     app.UseExceptionHandler();   // unhandled exceptions -> 500 ProblemDetails
     app.UseStatusCodePages();    // empty 4xx/5xx (e.g. 404) -> ProblemDetails
     app.UseSerilogRequestLogging();
+    app.UseAuthentication();
+    app.UseAuthorization();
 
     if (app.Environment.IsDevelopment())
     {
@@ -95,6 +101,13 @@ try
         },
         ResponseWriter = WriteHealthJson,
     });
+
+    // ---- API ----
+    // /api/v1/auth/* is anonymous; everything else under /api/v1 needs a session (401 ProblemDetails otherwise).
+    // A group policy (not a fallback policy) keeps unknown routes at 404.
+    app.MapAuthEndpoints();
+    var api = app.MapGroup("/api/v1").RequireAuthorization();
+    api.MapMeEndpoint();
 
     app.Run();
 }

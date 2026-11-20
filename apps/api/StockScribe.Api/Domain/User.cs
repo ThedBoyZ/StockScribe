@@ -7,6 +7,7 @@ namespace StockScribe.Api.Domain;
 public sealed class User
 {
     public const int DisplayNameMaxLength = 100;
+    public const int PersonaKeyMaxLength = 40;
 
     public Guid Id { get; private set; }
     public string DisplayName { get; private set; } = null!;
@@ -15,7 +16,22 @@ public sealed class User
     public Branch? Branch { get; private set; }
     public bool IsDemo { get; private set; }
 
+    /// <summary>
+    /// Stable id of a demo-login persona (e.g. "manager-b2"); null for every other user.
+    /// The seeder matches on it, so renaming a persona never creates a duplicate.
+    /// </summary>
+    public string? PersonaKey { get; private set; }
+
     private User() { } // EF Core
+
+    /// <summary>A user shown on the demo login page (ADR-0003).</summary>
+    public static User CreatePersona(string personaKey, string displayName, UserRole role, Guid? branchId)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(personaKey);
+        ArgumentOutOfRangeException.ThrowIfGreaterThan(personaKey.Length, PersonaKeyMaxLength, nameof(personaKey));
+
+        return new User(displayName, role, branchId, isDemo: true) { PersonaKey = personaKey };
+    }
 
     public User(string displayName, UserRole role, Guid? branchId, bool isDemo = false)
     {

@@ -133,6 +133,13 @@ jobs:
           # Unknown API routes come back from the API as ProblemDetails.
           test "$(curl -s -o /dev/null -w '%{http_code}' "$base/api/does-not-exist")" = "404"
 
+          # Demo login (Slice 1): no session → 401; pick the first persona → cookie → /me.
+          test "$(curl -s -o /dev/null -w '%{http_code}' "$base/api/v1/me")" = "401"
+          persona=$(curl -fsS "$base/api/v1/auth/personas" | jq -r '.[0].id')
+          curl -fsS -c cookies.txt -H 'content-type: application/json' \
+            -d "{\"personaId\":\"$persona\"}" "$base/api/v1/auth/demo-login" > /dev/null
+          curl -fsS -b cookies.txt "$base/api/v1/me" | tee /dev/stderr | grep -q '"role":"BranchManager"'
+
       - name: Logs on failure
         if: failure()
         run: docker compose logs --no-color

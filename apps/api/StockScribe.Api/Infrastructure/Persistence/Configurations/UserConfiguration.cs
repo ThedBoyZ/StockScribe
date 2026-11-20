@@ -20,6 +20,9 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
         b.Property(x => x.DisplayName).HasMaxLength(User.DisplayNameMaxLength).IsRequired();
         b.Property(x => x.Role).HasConversion<string>().HasMaxLength(20).IsRequired();
 
+        b.Property(x => x.PersonaKey).HasMaxLength(User.PersonaKeyMaxLength);
+        b.HasIndex(x => x.PersonaKey).IsUnique(); // NULLs don't collide in PostgreSQL
+
         b.HasOne(x => x.Branch)
             .WithMany()
             .HasForeignKey(x => x.BranchId)

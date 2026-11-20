@@ -63,6 +63,10 @@ services:
       ConnectionStrings__Postgres: *postgres-connection
       Mongo__ConnectionString: mongodb://mongo:27017
       Mongo__Database: ${MONGO_DATABASE:-stockscribe}
+      # Demo login + demo data (ADR-0003, docs/sa/seed-data.md). Local key is not a secret.
+      Auth__JwtSigningKey: ${JWT_SIGNING_KEY:-local-dev-signing-key-not-for-production-0123456789}
+      DEMO_MODE: "true"
+      SEED_DEMO: "true"
     depends_on:
       migrate:
         condition: service_completed_successfully

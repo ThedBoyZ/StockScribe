@@ -24,6 +24,10 @@ services:
       ConnectionStrings__Postgres: ${POSTGRES_CONNECTION:?missing in .env}
       Mongo__ConnectionString: ${MONGO_CONNECTION:?missing in .env}
       Mongo__Database: ${MONGO_DATABASE:-stockscribe}
+      Auth__JwtSigningKey: ${JWT_SIGNING_KEY:?missing in .env}
+      # Public demo: persona login + demo data are on in production on purpose (ADR-0003).
+      DEMO_MODE: "true"
+      SEED_DEMO: "true"
     # t3.micro has 1 GB RAM (+2 GB swap). Same cap as the local compose file.
     mem_limit: 400m
     restart: unless-stopped
