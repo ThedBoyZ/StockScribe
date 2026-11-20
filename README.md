@@ -3,15 +3,16 @@
 ระบบจัดซื้อและสต็อกสำหรับซูเปอร์มาร์เก็ตหลายสาขา — ใบขอซื้อ → ใบสั่งซื้อ → รับของ → สต็อกรายล็อตพร้อมแจ้งเตือนวันหมดอายุ
 
 [![CI](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml)
-![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20walking%20skeleton-orange)
+![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20slice%201-orange)
+[![Live](https://img.shields.io/badge/demo-live-brightgreen)](https://stockscribe.duckdns.org)
 ![Docs](https://img.shields.io/badge/release-docs--v0.3-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **สถานะ:** เฟส BA, UX/UI และ SA เสร็จแล้ว · กำลังทำ **v0.4 Walking skeleton** (Nuxt + .NET API + PostgreSQL + MongoDB + Docker)
+> **สถานะ:** เฟส BA, UX/UI และ SA เสร็จแล้ว · **Walking skeleton (Slice 0) ขึ้น production แล้ว** พร้อม CI/CD ไป AWS EC2 · กำลังทำ **Slice 1 · Demo login + seed**
 
 | 🔗 | ลิงก์ |
 | --- | --- |
-| 🌐 Live Demo | _เร็วๆ นี้_ |
+| 🌐 Live Demo | [stockscribe.duckdns.org](https://stockscribe.duckdns.org) · [สถานะระบบ](https://stockscribe.duckdns.org/health/ready) |
 | 🎨 ดีไซน์ (Figma) | [StockScribe — UI v1.0](ใส่ลิงก์) |
 | 📋 Project Board | [StockScribe MVP](https://github.com/users/ThedBoyZ/projects/2) |
 | 📄 เอกสาร | [BA](docs/ba/README.md) · [UX/UI](docs/ux/README.md) · [SA](docs/sa/README.md) · [ADR](docs/adr/README.md) |
@@ -80,7 +81,7 @@
 
 ```
 BA ──► UX/UI ──► SA ──► Dev ──► QA ──► DevOps ──► Release
- ✅      ✅      ✅     🚧
+ ✅      ✅      ✅     🚧              ✅
 ```
 
 | เฟส | เอกสาร | สถานะ | Release |
@@ -88,9 +89,9 @@ BA ──► UX/UI ──► SA ──► Dev ──► QA ──► DevOps ─�
 | Discovery (BA) | [docs/ba](docs/ba/README.md) | ✅ | [docs-v0.1](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.1) |
 | UX/UI + AC v1.1 | [docs/ux](docs/ux/README.md) | ✅ | [docs-v0.2](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.2) |
 | System Design (SA + ADR) | [docs/sa](docs/sa/README.md) · [docs/adr](docs/adr/README.md) | ✅ | [docs-v0.3](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.3) |
-| Development | [apps/](apps) | 🚧 Walking skeleton | v0.4 |
+| Development | [apps/](apps) | 🚧 Slice 0 ✅ · Slice 1 | v0.4 |
 | QA | [docs/qa](docs/qa) | ⏳ | |
-| Deploy | [docs/devops](docs/devops) | ⏳ | |
+| Deploy (CI/CD) | [deploy/](deploy/README.md) · [ADR-0006](docs/adr/0006-hosting-aws-ec2-sydney.md) | ✅ AWS EC2 · GitHub Actions | |
 
 ## โครงสร้าง Repo
 
