@@ -16,6 +16,16 @@ public static class SessionClaims
 
 public sealed record SessionToken(string Value, DateTimeOffset ExpiresAt);
 
+public static class ClaimsPrincipalExtensions
+{
+    /// <summary>The acting user from the validated session claims (only call on authorized endpoints).</summary>
+    public static Actor ToActor(this System.Security.Claims.ClaimsPrincipal principal) => new(
+        Guid.Parse(principal.FindFirst(SessionClaims.Subject)!.Value),
+        principal.FindFirst(SessionClaims.Name)?.Value ?? string.Empty,
+        Enum.Parse<UserRole>(principal.FindFirst(SessionClaims.Role)!.Value),
+        Guid.TryParse(principal.FindFirst(SessionClaims.BranchId)?.Value, out var branchId) ? branchId : null);
+}
+
 /// <summary>Issues the 8-hour session JWT. Swapping demo login for real login only changes who calls this.</summary>
 public sealed class SessionTokenService(IOptions<AuthOptions> options, TimeProvider time)
 {

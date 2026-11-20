@@ -7,6 +7,7 @@ using MongoDB.Driver;
 using Serilog;
 using Serilog.Formatting.Compact;
 using StockScribe.Api.Features.Auth;
+using StockScribe.Api.Features.PurchaseOrders;
 using StockScribe.Api.Infrastructure.Mongo;
 using StockScribe.Api.Infrastructure.Persistence;
 
@@ -43,6 +44,7 @@ try
     builder.Services.AddSingleton(sp =>
         sp.GetRequiredService<IMongoClient>()
           .GetDatabase(sp.GetRequiredService<IOptions<MongoOptions>>().Value.Database));
+    builder.Services.AddSingleton<AuditLog>();
 
     // ---- Health checks (no third-party HealthChecks packages) ----
     builder.Services.AddHealthChecks()
@@ -108,6 +110,7 @@ try
     app.MapAuthEndpoints();
     var api = app.MapGroup("/api/v1").RequireAuthorization();
     api.MapMeEndpoint();
+    api.MapPurchaseOrderEndpoints();
 
     app.Run();
 }

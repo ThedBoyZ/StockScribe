@@ -39,6 +39,11 @@ export default defineNuxtConfig({
           // docs/ux/DESIGN.md: headings Plus Jakarta Sans, body IBM Plex Sans Thai + IBM Plex Sans, codes JetBrains Mono
           href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap',
         },
+        {
+          rel: 'stylesheet',
+          // Icons used by the designs in docs/ux/template-html (<span class="material-symbols-outlined">name</span>).
+          href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400,0..1,0&display=block',
+        },
       ],
     },
   },
