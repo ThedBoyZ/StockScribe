@@ -11,6 +11,9 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
 {
     public DbSet<Branch> Branches => Set<Branch>();
     public DbSet<User> Users => Set<User>();
+    public DbSet<Supplier> Suppliers => Set<Supplier>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<PurchaseOrder> PurchaseOrders => Set<PurchaseOrder>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

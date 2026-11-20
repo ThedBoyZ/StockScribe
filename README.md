@@ -3,12 +3,12 @@
 ระบบจัดซื้อและสต็อกสำหรับซูเปอร์มาร์เก็ตหลายสาขา — ใบขอซื้อ → ใบสั่งซื้อ → รับของ → สต็อกรายล็อตพร้อมแจ้งเตือนวันหมดอายุ
 
 [![CI](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/ThedBoyZ/StockScribe/actions/workflows/ci.yml)
-![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20slice%201-orange)
+![Status](https://img.shields.io/badge/phase-Dev%20%C2%B7%20slice%203-orange)
 [![Live](https://img.shields.io/badge/demo-live-brightgreen)](https://stockscribe.duckdns.org)
 ![Docs](https://img.shields.io/badge/release-docs--v0.3-informational)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-> **สถานะ:** เฟส BA, UX/UI และ SA เสร็จแล้ว · **Walking skeleton (Slice 0) ขึ้น production แล้ว** พร้อม CI/CD ไป AWS EC2 · กำลังทำ **Slice 1 · Demo login + seed**
+> **สถานะ:** เฟส BA, UX/UI และ SA เสร็จแล้ว · **Walking skeleton (Slice 0) ขึ้น production แล้ว** พร้อม CI/CD ไป AWS EC2 · Demo login (Slice 1) และ **อนุมัติ PO ตามวงเงิน (Slice 2 · US-002)** ใช้งานได้แล้ว · ถัดไป Slice 3 รับของบนมือถือ
 
 | 🔗 | ลิงก์ |
 | --- | --- |
@@ -45,7 +45,7 @@
 
 | Story | ฟีเจอร์ | สถานะ |
 | --- | --- | --- |
-| [#2](https://github.com/ThedBoyZ/StockScribe/issues/2) | อนุมัติ PO ตามวงเงิน | ⏳ Ready · Slice 2 |
+| [#2](https://github.com/ThedBoyZ/StockScribe/issues/2) | อนุมัติ PO ตามวงเงิน | ✅ Done · Slice 2 |
 | [#1](https://github.com/ThedBoyZ/StockScribe/issues/1) | รับของไม่ครบตาม PO | ⏳ Ready · Slice 3 |
 | [#3](https://github.com/ThedBoyZ/StockScribe/issues/3) | แจ้งเตือนสินค้าใกล้หมดอายุ | ⏳ Ready · Slice 4 |
 | [#4](https://github.com/ThedBoyZ/StockScribe/issues/4) | เลือกหน่วยใน PR และแปลงเป็นหน่วยซื้อ | ⏳ Ready · Slice 5 |
@@ -89,7 +89,7 @@ BA ──► UX/UI ──► SA ──► Dev ──► QA ──► DevOps ─�
 | Discovery (BA) | [docs/ba](docs/ba/README.md) | ✅ | [docs-v0.1](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.1) |
 | UX/UI + AC v1.1 | [docs/ux](docs/ux/README.md) | ✅ | [docs-v0.2](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.2) |
 | System Design (SA + ADR) | [docs/sa](docs/sa/README.md) · [docs/adr](docs/adr/README.md) | ✅ | [docs-v0.3](https://github.com/ThedBoyZ/StockScribe/releases/tag/docs-v0.3) |
-| Development | [apps/](apps) | 🚧 Slice 0 ✅ · Slice 1 | v0.4 |
+| Development | [apps/](apps) | 🚧 Slice 0–2 ✅ · Slice 3 | v0.4–v0.6 |
 | QA | [docs/qa](docs/qa) | ⏳ | |
 | Deploy (CI/CD) | [deploy/](deploy/README.md) · [ADR-0006](docs/adr/0006-hosting-aws-ec2-sydney.md) | ✅ AWS EC2 · GitHub Actions | |
 
