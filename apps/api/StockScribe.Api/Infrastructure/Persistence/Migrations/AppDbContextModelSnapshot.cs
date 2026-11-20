@@ -70,6 +70,11 @@ namespace StockScribe.Api.Infrastructure.Persistence.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("is_demo");
 
+                    b.Property<string>("PersonaKey")
+                        .HasMaxLength(40)
+                        .HasColumnType("character varying(40)")
+                        .HasColumnName("persona_key");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -81,6 +86,10 @@ namespace StockScribe.Api.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("BranchId")
                         .HasDatabaseName("ix_users_branch_id");
+
+                    b.HasIndex("PersonaKey")
+                        .IsUnique()
+                        .HasDatabaseName("ix_users_persona_key");
 
                     b.ToTable("users", null, t =>
                         {

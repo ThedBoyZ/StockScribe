@@ -163,6 +163,7 @@ jobs:
           curl -fsS -o /dev/null "https://$DOMAIN/health/live"
           curl -fsS "https://$DOMAIN/" | grep -q '<div id="__nuxt"'
           curl -fsS -o /dev/null "https://$DOMAIN/po/123"
+          curl -fsS "https://$DOMAIN/api/v1/auth/personas" | grep -q '"key":"manager-b2"'
           test "$(curl -s -o /dev/null -w '%{http_code}' "http://$DOMAIN/")" = "301"
           echo "Live: https://$DOMAIN ($TAG)" >> "$GITHUB_STEP_SUMMARY"
 

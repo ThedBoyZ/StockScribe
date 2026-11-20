@@ -46,8 +46,8 @@
 | --- | --- | --- |
 | GET | `/health/live` | 200 เมื่อ process ทำงาน |
 | GET | `/health/ready` | 200 เมื่อ Postgres และ Mongo ตอบ · 503 พร้อมรายละเอียดเมื่อไม่พร้อม |
-| GET | `/api/v1/auth/personas` | รายชื่อ persona สำหรับหน้า demo login |
-| POST | `/api/v1/auth/demo-login` | body `{ "personaId": "…" }` → set cookie, ตอบ `me` |
+| GET | `/api/v1/auth/personas` | รายชื่อ persona สำหรับหน้า demo login · `[{ id, key, name, role, branch }]` · 404 เมื่อ `DEMO_MODE` ไม่เปิด |
+| POST | `/api/v1/auth/demo-login` | body `{ "personaId": "…" }` → set cookie `sf_session` (JWT 8 ชม.), ตอบ `me` · persona ไม่มีจริง 404 |
 | POST | `/api/v1/auth/logout` | ลบ cookie |
 | GET | `/api/v1/me` | `{ id, name, role, branch: { id, name } \| null }` |
 
